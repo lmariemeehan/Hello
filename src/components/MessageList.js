@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import Timestamp from 'react-timestamp';
 
 class MessageList extends Component {
   constructor(props){
     super(props);
     this.state= {
       Messages: [],
-      newMessage: ""
+      newMessage: " "
     };
 
   this.MessagesRef = this.props.firebase.database().ref('Messages');
@@ -30,7 +31,7 @@ class MessageList extends Component {
     this.MessagesRef.push({
       name: this.state.newMessage
   });
-    this.setState({newMessage: ''});
+    this.setState({newMessage: " "});
   }
 
   render() {
@@ -39,16 +40,16 @@ class MessageList extends Component {
 
       <ul className= "messageList">
         {this.state.Messages
-          .filter((message) => message.roomID === this.props.activeRoom)
+          .filter((message) => message.roomID === this.props.activeRoom.roomID)
           .map((message, index)=>
             <div key= {index}>
+            <li className="username">{message.username}</li>)
             <li className="content">{message.content}</li>
             <li className="sentAt">{message.sentAt}</li>
-            <li className="username">{message.username}</li>)
             </div>)}
       </ul>
 
-      <form className="MessageSubmit" onSubmit={this.handleSubmit}>
+      <form className="createMessages" onSubmit={this.handleSubmit}>
         <label>
         New Message:
         <input type="text" value={this.state.newMessage} placeholder="Message" onChange={this.createMessage}/>
