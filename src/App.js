@@ -32,8 +32,8 @@ class App extends Component {
     return (
       <div className="App">
       <h1>Bloc Chat</h1>
-      <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}/>
-      <MessageList activeRoom={this.state.activeRoom} firebase={firebase}/>
+      <RoomList firebase={firebase} activeRoom={this.state.activeRoom} onClick={this.setActiveRoom}/>
+      <MessageList firebase={firebase} activeRoom={this.state.activeRoom} onClick={this.setActiveRoom}/>
       </div>
     );
   }
