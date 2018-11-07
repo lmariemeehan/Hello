@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import ActiveRoom from 'ActiveRoom';
 
 class MessageList extends Component {
   constructor(props){
     super(props);
     this.state= {
-      Messages: {},
+      Messages: [],
       newMessage: ""
     };
 
@@ -34,13 +33,22 @@ class MessageList extends Component {
     this.setState({newMessage: ''});
   }
 
-  render(){
+  render() {
     return (
       <div>
-      {this.state.Messages.filter((message) => this.props.ActiveRoom === Messages.roomID)
-      .map((message)=> <p>{message.content}{message.sentAt}{message.username}</p>)}
 
-      <form onSubmit={this.handleSubmit}>
+      <ul className= "messageList">
+        {this.state.Messages
+          .filter((message) => message.roomID === this.props.activeRoom)
+          .map((message, index)=>
+            <div key= {index}>
+            <li className="content">{message.content}</li>
+            <li className="sentAt">{message.sentAt}</li>
+            <li className="username">{message.username}</li>)
+            </div>)}
+      </ul>
+
+      <form className="MessageSubmit" onSubmit={this.handleSubmit}>
         <label>
         New Message:
         <input type="text" value={this.state.newMessage} placeholder="Message" onChange={this.createMessage}/>

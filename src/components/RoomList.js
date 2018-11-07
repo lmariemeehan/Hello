@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './RoomList.css';
 
 class RoomList extends Component {
 	constructor(props) {
@@ -38,7 +38,7 @@ class RoomList extends Component {
   render() {
     return (
 			<div>
-    	<ul>{this.state.rooms.map((room) => (<li>{room.name}</li>))}</ul>
+    	<ul className="roomList">{this.state.rooms.map((room) => (<li>{room.name}</li>))}</ul>
 			<form onSubmit={this.handleSubmit}>
 				<label>
 				New Room Name:
