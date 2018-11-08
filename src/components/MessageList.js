@@ -1,52 +1,53 @@
 import React, { Component } from 'react';
-import Timestamp from 'react-timestamp';
 
 class MessageList extends Component {
   constructor(props){
     super(props);
     this.state= {
-      Messages: [],
-      newMessage: " "
+      messages: [],
+      content: "",
+      roomID: "",
+      sentAt: "",
+      username: ""
     };
 
-  this.MessagesRef = this.props.firebase.database().ref('Messages');
+  this.messagesRef = this.props.firebase.database().ref('messages').orderByChild('roomID').equalTo('roomID');
   this.createMessage = this.createMessage.bind(this);
-	this.handleSubmit = this.handleSubmit.bind(this);
 }
 
   componentDidMount() {
-    this.MessagesRef.on('child_added', snapshot => {
+    this.messagesRef.on('child_added', snapshot => {
       const message = snapshot.val();
       message.key = snapshot.key;
-    this.setState({ Messages: this.state.Messages.concat(message)})
+    this.setState({ messages: this.state.messages.concat(message)})
     });
   }
 
-  createMessage(event){
-    this.setState({newMessage: event.target.value});
-  }
-
-  handleSubmit(event) {
+  createMessage(event) {
     event.preventDefault();
-    this.MessagesRef.push({
-      name: this.state.newMessage
+    this.messagesRef.push({
+      content: this.state.content,
+      roomID: this.state.roomID,
+      username: this.state.username,
+      sentAt: this.props.firebase.database.ServerValue.TIMESTAMP
   });
-    this.setState({newMessage: " "});
+    this.setState({newmessage: ""});
   }
 
   render() {
     return (
       <div>
-
-      <ul className= "messageList">
-        {this.state.Messages
-          .filter((message) => message.roomID === this.props.activeRoom.roomID)
+      <h2>Messages</h2>
+      <ul className= "retrievingMessageList">
+        {this.state.messages
           .map((message, index)=>
             <div key= {index}>
+            <li className="roomID">{message.roomID}</li>
             <li className="username">{message.username}</li>)
             <li className="content">{message.content}</li>
             <li className="sentAt">{message.sentAt}</li>
-            </div>)}
+            </div>
+        )}
       </ul>
 
       <form className="createMessages" onSubmit={this.handleSubmit}>
