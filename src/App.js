@@ -3,7 +3,6 @@ import './App.css';
 import * as firebase from 'firebase';
 import RoomList from './components/RoomList';
 import MessageList from './components/MessageList';
-import SplitPane from './components/SplitPane';
 
 var config = {
     apiKey: "AIzaSyAICwODjMaxn8gJQAP6iafA6uDGburODX0",
@@ -32,10 +31,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <h1>Bloc Chat</h1>
       <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}/>
       <MessageList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}/>
-      <SplitPane left={<RoomList/>} right={<MessageList/>}/>
       </div>
     );
   }

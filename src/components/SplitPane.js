@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './SplitPane.css';
 
 class SplitPane extends Component {
   constructor(props){

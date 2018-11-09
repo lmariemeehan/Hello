@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './MessageList.css';
 
 class MessageList extends Component {
   constructor(props){
@@ -11,7 +12,7 @@ class MessageList extends Component {
       username: ""
     };
 
-  this.messagesRef = this.props.firebase.database().ref('messages').orderByChild('roomID').equalTo('roomID');
+  this.messagesRef = this.props.firebase.database().ref('messages');
   this.createMessage = this.createMessage.bind(this);
 }
 
@@ -40,10 +41,10 @@ class MessageList extends Component {
       <h2>Messages</h2>
       <ul className= "retrievingMessageList">
         {this.state.messages
+          .filter(message => message.roomID === this.props.activeRoom.key)
           .map((message, index)=>
             <div key= {index}>
-            <li className="roomID">{message.roomID}</li>
-            <li className="username">{message.username}</li>)
+            <li className="username">{message.username}</li>
             <li className="content">{message.content}</li>
             <li className="sentAt">{message.sentAt}</li>
             </div>
