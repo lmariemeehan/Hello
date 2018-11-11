@@ -1,38 +1,48 @@
 header {
-  background-color: #333;
-  min-height: 10vh;
+  background-color: white;
+  border-style: groove;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
+  font-family: brandon-grotesque;
+}
+
+.userButtons {
+  background-color: #F1F1F1;
+  float: right;
+  font-family: brandon-grotesque;
+  max-width: 500px;
 }
 
 .column1 {
-  background-color: #aaa;
   float: left;
-  width: 25%;
-  font-size: 1.3125rem;
+  width: 15%;
+  font-size: 1.25rem;
   padding: 5px;
   text-align: center;
-  font-family: sans-serif;
+  font-family: brandon-grotesque;
+  border-style: groove;
 }
 
 .column2 {
   float: right;
-  width: 75%;
+  width: 85%;
   font-size: 1rem;
-  font-family: sans-serif;
+  font-family: brandon-grotesque;
   text-align: center;
 }
 
 footer {
-    padding: 20px;
+    padding: 20px 0 40px;
     text-align: center;
     background: #aaa;
-    font-family: sans-serif;
-    background-color: #FCCB1A;
+    font-family: brandon-grotesque;
+    background-color: white;
+    border-style: double;
 }
 
 .App {
