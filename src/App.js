@@ -3,7 +3,8 @@ import * as firebase from 'firebase';
 import RoomList from './components/RoomList';
 import MessageList from './components/MessageList';
 import User from './components/User';
-//import './App.css';
+import {Navbar, Nav, NavItem, Grid, Row, Col} from 'react-bootstrap';
+import './App.css';
 
 var config = {
     apiKey: "AIzaSyAICwODjMaxn8gJQAP6iafA6uDGburODX0",
@@ -40,23 +41,26 @@ class App extends Component {
   render() {
     return (
       <div>
-      <header>Bloc Chat</header>
-      <div className="userButtons">
-        <User firebase={firebase} user={this.state.user} setUser={this.setUser}/>
-      </div>
-      <div className="row">
-      <div className="column1">
+      <Navbar>
+        <Navbar.Header>
+          <Navbar.Brand>Bloc Chat</Navbar.Brand>
+        </Navbar.Header>
+        <Nav pullRight>
+          <NavItem>
+          <User firebase={firebase} user={this.state.user} setUser={this.setUser}/>
+          </NavItem>
+        </Nav>
+      </Navbar>
+      <Grid>
+       <Row className="show-grid">
+        <Col xs={6} md={4}>
         <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}/>
-      </div>
-      <div className="column2">
+      </Col>
+      <Col xs={12} md={8}>
         <MessageList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}/>
-      </div>
-      </div>
-
-
-      <footer>
-        <p>Laura Meehan</p>
-      </footer>
+      </Col>
+      </Row>
+      </Grid>
       </div>
     );
   }

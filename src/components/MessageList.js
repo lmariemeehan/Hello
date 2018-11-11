@@ -38,7 +38,7 @@ class MessageList extends Component {
   render() {
     return (
       <div>
-      <h2>Messages</h2>
+      
       <ul className= "retrievingMessageList">
         {this.state.messages
           .filter(message => message.roomID === this.props.activeRoom.key)
