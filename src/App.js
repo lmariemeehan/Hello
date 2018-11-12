@@ -44,26 +44,42 @@ class App extends Component {
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>Bloc Chat</Navbar.Brand>
-        </Navbar.Header>
-        <Nav pullRight>
-          <NavItem>
-          <User firebase={firebase} user={this.state.user} setUser={this.setUser}/>
+            </Navbar.Header>
+            <Nav pullRight>
+            <NavItem>
+            <User firebase={firebase} user={this.state.user} setUser={this.setUser}/>
           </NavItem>
         </Nav>
       </Navbar>
+
       <Grid>
        <Row className="show-grid">
-        <Col xs={6} md={4}>
-        <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}/>
-      </Col>
-      <Col xs={12} md={8}>
-        <MessageList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}/>
-      </Col>
+          <Col xs={6} md={4}>
+            <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}/>
+          </Col>
+        <Col xs={12} md={8}>
+        </Col>
       </Row>
+
+      <Row>
+        <Col xs={6} md={4}>
+          </Col>
+            <Col xs={12} md={8}>
+          <MessageList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}/>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col xs={12} md={12}>Copyright 2018 Laura Meehan</Col>
+        </Row>
       </Grid>
       </div>
     );
   }
 }
+
+
+
+
 
 export default App;

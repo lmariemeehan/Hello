@@ -6,14 +6,18 @@ class MessageList extends Component {
     super(props);
     this.state= {
       messages: [],
+      newMessage: "",
       content: "",
       roomID: "",
       sentAt: "",
-      username: ""
+      username: "",
+      currentTime: ""
     };
 
   this.messagesRef = this.props.firebase.database().ref('messages');
   this.createMessage = this.createMessage.bind(this);
+  this.handleSubmit = this.handleSubmit.bind(this);
+  this.formatTime = this.formatTime.bind(this);
 }
 
   componentDidMount() {
@@ -25,20 +29,30 @@ class MessageList extends Component {
   }
 
   createMessage(event) {
-    event.preventDefault();
-    this.messagesRef.push({
-      content: this.state.content,
-      roomID: this.state.roomID,
-      username: this.state.username,
-      sentAt: this.props.firebase.database.ServerValue.TIMESTAMP
-  });
-    this.setState({newmessage: ""});
+    this.setState({newMessage: event.target.value});
   }
+
+  handleSubmit(event) {
+  event.preventDefault();
+  this.messagesRef.push({
+    content: this.state.newMessage,
+    roomID: this.props.activeRoom,
+    sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
+    username: this.state.username
+});
+  this.setState({newMessage: ""});
+}
+
+formatTime() {
+  let unixTime = this.props.firebase.database.ServerValue.TIMESTAMP;
+  let localTime = unixTime.toLocaleTimeString();
+  this.setState({currentTime: localTime});
+}
 
   render() {
     return (
       <div>
-      
+
       <ul className= "retrievingMessageList">
         {this.state.messages
           .filter(message => message.roomID === this.props.activeRoom.key)
@@ -47,17 +61,20 @@ class MessageList extends Component {
             <li className="username">{message.username}</li>
             <li className="content">{message.content}</li>
             <li className="sentAt">{message.sentAt}</li>
-            </div>
+          </div>
         )}
       </ul>
 
       <form className="createMessages" onSubmit={this.handleSubmit}>
         <label>
-        New Message:
-        <input type="text" value={this.state.newMessage} placeholder="Message" onChange={this.createMessage}/>
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+          New Message:
+          <input type="text" value={this.state.newMessage} placeholder="Message" onChange={this.createMessage}/>
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+
+        <return>{this.state.newMessage}</return>
+
       </div>
     )
   }
