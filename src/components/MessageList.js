@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-import './MessageList.css';
 
 class MessageList extends Component {
   constructor(props){
     super(props);
     this.state= {
       messages: [],
-      newMessage: "",
-      content: "",
-      roomID: "",
-      sentAt: "",
-      username: "",
-      currentTime: ""
+      newMessage: ""
     };
 
   this.messagesRef = this.props.firebase.database().ref('messages');
@@ -36,9 +30,9 @@ class MessageList extends Component {
   event.preventDefault();
   this.messagesRef.push({
     content: this.state.newMessage,
-    roomID: this.props.activeRoom,
+    roomID: this.props.activeRoom.key,
     sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
-    username: this.state.username
+    username: this.props.user.displayName
 });
   this.setState({newMessage: ""});
 }
@@ -52,7 +46,6 @@ formatTime() {
   render() {
     return (
       <div>
-
       <ul className= "retrievingMessageList">
         {this.state.messages
           .filter(message => message.roomID === this.props.activeRoom.key)
@@ -68,12 +61,11 @@ formatTime() {
       <form className="createMessages" onSubmit={this.handleSubmit}>
         <label>
           New Message:
-          <input type="text" value={this.state.newMessage} placeholder="Message" onChange={this.createMessage}/>
+          <input type="text" value={this.state.newMessage} placeholder="Message"
+            onChange={this.createMessage} />
           </label>
           <input type="submit" value="Submit" />
         </form>
-
-        <return>{this.state.newMessage}</return>
 
       </div>
     )

@@ -3,10 +3,8 @@ import React, { Component } from 'react';
 class User extends Component {
   constructor(props){
     super(props);
-    
-  this.signIn = this.signIn.bind(this);
-  this.signOut = this.signOut.bind(this);
 }
+
   componentDidMount(){
     this.props.firebase.auth().onAuthStateChanged( user => {
     this.props.setUser(user);
@@ -25,10 +23,10 @@ class User extends Component {
   render() {
   return (
     <section id="buttons">
-      <button id="sign-in" onClick={this.signIn}>
+      <button id="sign-in" onClick={this.signIn.bind(this)}>
         <span className="ion-log-in"></span>
       </button>
-      <button id="sign-out" onClick={this.signOut}>
+      <button id="sign-out" onClick={this.signOut.bind(this)}>
         <span className="ion-log-out"></span>
       </button>
       <p>{this.props.user ? this.props.user.displayName : "GUEST" } is logged in</p>

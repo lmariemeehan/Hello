@@ -22,7 +22,7 @@ class App extends Component {
     super(props);
     this.state = {
       activeRoom: "",
-      user: ""
+      user: "",
     };
 
     this.setActiveRoom = this.setActiveRoom.bind(this);
@@ -30,12 +30,12 @@ class App extends Component {
     }
 
     setActiveRoom(room) {
-      console.log(room);
       this.setState({activeRoom: room});
   }
+
     setUser(user) {
-      console.log(user);
-      this.setState({ user: user});
+        this.setUser({user: user, activeRoom: ""});
+        console.log(user);
     }
 
   render() {
@@ -55,31 +55,29 @@ class App extends Component {
       <Grid>
        <Row className="show-grid">
           <Col xs={6} md={4}>
-            <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}/>
-          </Col>
-        <Col xs={12} md={8}>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col xs={6} md={4}>
-          </Col>
+            <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom} username={this.state.user}/>
+              </Col>
             <Col xs={12} md={8}>
-          <MessageList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}/>
-        </Col>
-      </Row>
+          </Col>
+        </Row>
 
-      <Row>
-        <Col xs={12} md={12}>Copyright 2018 Laura Meehan</Col>
+        <Row>
+          <Col xs={6} md={4}>
+            </Col>
+              <Col xs={12} md={8}>
+            <MessageList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom} user={this.state.user} />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col xs={12} md={12}>Copyright 2018 Laura Meehan</Col>
         </Row>
       </Grid>
+
       </div>
     );
   }
 }
-
-
-
 
 
 export default App;
