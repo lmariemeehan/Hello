@@ -28,14 +28,15 @@ class MessageList extends Component {
 
   handleSubmit(event) {
   event.preventDefault();
+  console.log(this.props.activeRoom.key);
   this.messagesRef.push({
     content: this.state.newMessage,
     roomID: this.props.activeRoom.key,
     sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
     username: this.props.user.displayName
-});
+  });
   this.setState({newMessage: ""});
-}
+  }
 
 formatTime() {
   let unixTime = this.props.firebase.database.ServerValue.TIMESTAMP;
