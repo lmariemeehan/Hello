@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {ListGroup, ListGroupItem} from 'react-bootstrap';
 
 class RoomList extends Component {
 	constructor(props) {
@@ -35,9 +36,9 @@ class RoomList extends Component {
     return (
 			<div>
 				<h2>Please select a room</h2>
-    			<ul className="retrievingRoomList">{this.state.rooms.map((room) =>
-						(<li className="eachRoom" key={room.name} onClick={() => this.props.setActiveRoom(room)}>{room.name}</li>))}
-						</ul>
+    			<ListGroup className="retrievingRoomList">{this.state.rooms.map((room) =>
+						(<ListGroupItem className="eachRoom" key={room.name} onClick={() => this.props.setActiveRoom(room)}>{room.name}</ListGroupItem>))}
+						</ListGroup>
 
 						<form className="createNewRoom" onSubmit={this.handleSubmit.bind(this)}>
 						<label>
@@ -50,6 +51,5 @@ class RoomList extends Component {
 	  )
   }
 }
-
 
 export default RoomList;

@@ -22,7 +22,7 @@ class App extends Component {
     super(props);
     this.state = {
       activeRoom: "",
-      user: "",
+      user: " "
     };
 
     this.setActiveRoom = this.setActiveRoom.bind(this);
@@ -35,8 +35,8 @@ class App extends Component {
   }
 
     setUser(user) {
-        this.setUser({user: user});
-        console.log(user);
+      console.log(user);
+      this.setUser({user: user});
     }
 
   render() {
@@ -56,7 +56,7 @@ class App extends Component {
       <Grid>
        <Row className="show-grid">
           <Col xs={6} md={4}>
-            <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom} username={this.state.user}/>
+            <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom} user={this.state.user}/>
               </Col>
             <Col xs={12} md={8}>
           </Col>
@@ -66,7 +66,7 @@ class App extends Component {
           <Col xs={6} md={4}>
             </Col>
               <Col xs={12} md={8}>
-            <MessageList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom} user={this.state.user} />
+            <MessageList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom} user={this.state.user}/>
           </Col>
         </Row>
 
