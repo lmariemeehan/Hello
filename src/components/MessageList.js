@@ -47,6 +47,7 @@ formatTime() {
   render() {
     return (
       <div>
+      <h2>{this.props.activeRoom.name}</h2>
       <ul className= "retrievingMessageList">
         {this.state.messages
           .filter(message => message.roomID === this.props.activeRoom.key)

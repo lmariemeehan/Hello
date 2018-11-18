@@ -22,7 +22,7 @@ class App extends Component {
     super(props);
     this.state = {
       activeRoom: "",
-      user: " "
+      user: ""
     };
 
     this.setActiveRoom = this.setActiveRoom.bind(this);
@@ -59,13 +59,6 @@ class App extends Component {
             <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom} user={this.state.user}/>
               </Col>
             <Col xs={12} md={8}>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col xs={6} md={4}>
-            </Col>
-              <Col xs={12} md={8}>
             <MessageList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom} user={this.state.user}/>
           </Col>
         </Row>
