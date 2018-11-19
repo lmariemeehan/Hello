@@ -22,7 +22,7 @@ class App extends Component {
     super(props);
     this.state = {
       activeRoom: "",
-      user: ""
+      user: null
     };
 
     this.setActiveRoom = this.setActiveRoom.bind(this);
@@ -36,7 +36,7 @@ class App extends Component {
 
     setUser(user) {
       console.log(user);
-      this.setState({user: user});
+      this.setState({user: user.displayName});
     }
 
   render() {
