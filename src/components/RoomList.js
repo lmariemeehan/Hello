@@ -39,10 +39,9 @@ class RoomList extends Component {
     			<ListGroup className="retrievingRoomList">{this.state.rooms.map((room) =>
 						(<ListGroupItem className="eachRoom" key={room.name} onClick={() => this.props.setActiveRoom(room)}>{room.name}</ListGroupItem>))}
 						</ListGroup>
-
 						<form className="createNewRoom" onSubmit={this.handleSubmit.bind(this)}>
 						<label>
-							New Room Name:
+							Create New Room:
 						<input type="text" value={this.state.newRoomName} placeholder="Room" onChange={this.createRoom.bind(this)}/>
 						</label>
 						<input type="submit" value="Submit" />

@@ -15,14 +15,14 @@ var config = {
     messagingSenderId: "46892651318"
   };
 
-  const app = firebase.initializeApp(config);
+  firebase.initializeApp(config);
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       activeRoom: "",
-      user: null
+      user: ""
     };
 
     this.setActiveRoom = this.setActiveRoom.bind(this);
@@ -36,7 +36,7 @@ class App extends Component {
 
     setUser(user) {
       console.log(user);
-      this.setState({user: user.displayName});
+      this.setState({user: user});
     }
 
   render() {

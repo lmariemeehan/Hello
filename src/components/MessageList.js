@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {Table, FormGroup, ControlLabel, FormControl} from 'react-bootstrap';
+import './MessageList.css';
 
 class MessageList extends Component {
   constructor(props){
@@ -33,42 +35,48 @@ class MessageList extends Component {
     content: this.state.newMessage,
     roomID: this.props.activeRoom.key,
     sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
-    username: this.props.user
+    username: this.props.user ? this.props.user.displayName : 'Guest'
   });
   this.setState({newMessage: ""});
   }
 
-formatTime() {
-  let unixTime = this.props.firebase.database.ServerValue.TIMESTAMP;
-  let localTime = unixTime.toLocaleTimeString();
-  this.setState({currentTime: localTime});
-}
+  formatTime(input) {
+    let time = new Date(input);
+    return time.toGMTString() + '\n' + time.toLocaleTimeString();
+  }
 
   render() {
     return (
       <div>
-      <h2>{this.props.activeRoom.name}</h2>
-      <ul className= "retrievingMessageList">
+      <h3>{this.props.activeRoom.name}</h3>
+      <div className= "retrievingMessageList">
         {this.state.messages
           .filter(message => message.roomID === this.props.activeRoom.key)
           .map((message, index)=>
-            <div key= {index}>
-            <li className="username">{message.username}</li>
-            <li className="content">{message.content}</li>
-            <li className="sentAt">{message.sentAt}</li>
-          </div>
-        )}
-      </ul>
+            <Table striped condensed responsive key={index}>
+              <thead>
+                <tr>
+                  <th>{message.username}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{message.content}</td>
+                  <td>{this.formatTime(message.sentAt)}</td>
+                </tr>
+              </tbody>
+            </Table>
+          )}
+      </div>
 
-      <form className="createMessages" onSubmit={this.handleSubmit}>
-        <label>
-          New Message:
-          <input type="text" value={this.state.newMessage} placeholder="Message"
+      <form className="createMessageForm" onSubmit={this.handleSubmit}>
+       <FormGroup>
+        <ControlLabel>New Message:</ControlLabel>
+          <FormControl type="text" value={this.state.newMessage} placeholder="Enter message"
             onChange={this.createMessage} />
-          </label>
           <input type="submit" value="Submit" />
+        </FormGroup>
         </form>
-
       </div>
     )
   }
