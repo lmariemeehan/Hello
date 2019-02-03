@@ -1,4 +1,11 @@
-.userButtons {
+.column1 {
+  float: left;
+  width: 25%;
+  background-color: #eeeeee;
+  padding: 10px;
+}
+
+/*.userButtons {
   background-color: #F1F1F1;
   float: right;
   font-family: brandon-grotesque;
@@ -8,7 +15,7 @@
 .rooms {
   border-right-style: solid;
 }
-
+*/
 footer {
     width: auto;
     max-width: 680px;

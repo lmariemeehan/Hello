@@ -4,7 +4,6 @@ import RoomList from './components/RoomList';
 import MessageList from './components/MessageList';
 import User from './components/User';
 import {Navbar, Nav, NavItem, Grid, Row, Col} from 'react-bootstrap';
-import './App.css';
 
 var config = {
     apiKey: "AIzaSyAICwODjMaxn8gJQAP6iafA6uDGburODX0",
@@ -44,7 +43,7 @@ class App extends Component {
       <div>
       <Navbar>
         <Navbar.Header>
-          <Navbar.Brand>Bloc Chat</Navbar.Brand>
+          <Navbar.Brand>Hello</Navbar.Brand>
             </Navbar.Header>
             <Nav pullRight>
             <NavItem>
@@ -67,7 +66,6 @@ class App extends Component {
           <Col xs={12} md={12}>Copyright 2018 Laura Meehan</Col>
         </Row>
       </Grid>
-
       </div>
     );
   }
