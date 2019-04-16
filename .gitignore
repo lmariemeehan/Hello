@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 
-/src/components/MessageListFails.js
-/src/components/UserWithAttemptAtToggleLogIns.js
+MessageListFails.js
+UserWithAttemptAtToggleLogIns.js
 ActiveRoom.js
 .DS_Store
