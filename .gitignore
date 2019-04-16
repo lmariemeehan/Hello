@@ -24,6 +24,6 @@ yarn-error.log*
 
 
 /src/components/MessageListFails.js
-./src/components/UserWithAttemptAtToggleLogins.js
+/src/components/UserWithAttemptAtToggleLogIns.js
 ActiveRoom.js
 .DS_Store
