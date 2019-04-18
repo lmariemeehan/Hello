@@ -17,11 +17,9 @@
 }
 */
 footer {
-    width: auto;
-    max-width: 680px;
-    padding: 20px;
-    text-align: center;
-    box-sizing: border-box;
-    margin-bottom: 60px;
-    background-color: #F1F1F1;
+  width: auto;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #F1F1F1;
 }
