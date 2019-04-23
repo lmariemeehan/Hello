@@ -1,3 +1,28 @@
+## Formerly known as Bloc-Chat. This is a SPA front-end chat app built with React.js from the ground-up.
+
+## List of features:
+* Create chat rooms to talk about different topics
+* Firebase authentication to authenticate users
+* Create messages to talk with others
+
+## List of tools that played a role in the make up of this baby:
+* npm - Node package manager
+* React Developer Tools Chrome extension - helped with debugging
+* Firebase - Backend as a Service (BaaS) NoSQL database.
+* JSX - This was written with JSX which is JavaScript expressions with an HTML-like syntax
+* React Router - to help with client-side page transitions
+* Git - version-control
+* CSS - for layout and style
+* Bootstrap - for some style
+* React - timestamp - for showing dates/times of newly created messages
+
+Check out the Live Version at https://lmariemeehan-bloc-chat-react.herokuapp.com
+
+
+### Curious about React? See below:
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
