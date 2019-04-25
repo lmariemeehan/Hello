@@ -69,6 +69,7 @@ class MessageList extends Component {
           )}
       </div>
 
+      <div className="fixed-bottom">
       <form className="createMessageForm" onSubmit={this.handleSubmit}>
        <FormGroup>
         <ControlLabel>New Message:</ControlLabel>
@@ -77,6 +78,7 @@ class MessageList extends Component {
           <input type="submit" value="Submit" />
         </FormGroup>
         </form>
+      </div>
       </div>
     )
   }
