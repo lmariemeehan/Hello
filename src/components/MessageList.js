@@ -52,11 +52,16 @@ class MessageList extends Component {
         {this.state.messages
           .filter(message => message.roomID === this.props.activeRoom.key)
           .map((message, index)=>
-            <ul key={index}>
-            <li>{message.username}</li>
-            <li>{message.content}</li>
-            <li>{this.formatTime(message.sentAt)}</li>
-            </ul>
+            <table key={index}>
+              <tr>
+                <th><ion-icon name="contact"></ion-icon></th>
+                <th className="message-username">{message.username} |</th>
+                <th className="message-sentAt">{this.formatTime(message.sentAt)}</th>
+              </tr>
+              <tr>
+                <td className="message-content">{message.content}</td>
+              </tr>
+            </table>
           )}
       </div>
 

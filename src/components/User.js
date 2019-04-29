@@ -26,7 +26,7 @@ class User extends Component {
       <button id="sign-out" onClick={this.signOut.bind(this)}>
         <span className="ion-log-out"></span>
       </button>
-      <p className="user-name">{this.props.user ? this.props.user.displayName : "GUEST" } </p>
+      <p className="user-name"><span className="user-icon"><ion-icon name="contact"></ion-icon></span>{this.props.user ? this.props.user.displayName : "GUEST" } </p>
     </section>
 
   );

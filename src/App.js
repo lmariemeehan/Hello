@@ -41,13 +41,14 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
-      
+
         <header className="app-name">Hello</header>
 
         <aside className="room-list">
+
           <User firebase={firebase}
-              user={this.state.user}
-              setUser={this.setUser}/>
+                user={this.state.user}
+                setUser={this.setUser}/>
 
           <RoomList firebase={firebase}
                     activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}
@@ -60,7 +61,10 @@ class App extends Component {
                        user={this.state.user}/>
         </main>
 
-        <footer>Copyright 2018 - 2019 Laura Meehan</footer>
+        <footer>
+          <p>Copyright 2018 - 2019 Laura Meehan</p>
+          <a href="https://github.com/lmariemeehan/Hello"><ion-icon name="logo-github"></ion-icon> Check it out!</a>
+          </footer>
 
       </div>
     );
