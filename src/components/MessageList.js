@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import {Table, FormGroup, ControlLabel, FormControl} from 'react-bootstrap';
-import './MessageList.css';
 
 class MessageList extends Component {
   constructor(props){
@@ -47,38 +45,28 @@ class MessageList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="messages">
       <h3>{this.props.activeRoom.name}</h3>
-      <div className= "retrievingMessageList">
+
+      <div className= "retrieveMessages">
         {this.state.messages
           .filter(message => message.roomID === this.props.activeRoom.key)
           .map((message, index)=>
-            <Table striped condensed responsive key={index}>
-              <thead>
-                <tr>
-                  <th>{message.username}</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{message.content}</td>
-                  <td>{this.formatTime(message.sentAt)}</td>
-                </tr>
-              </tbody>
-            </Table>
+            <ul key={index}>
+            <li>{message.username}</li>
+            <li>{message.content}</li>
+            <li>{this.formatTime(message.sentAt)}</li>
+            </ul>
           )}
       </div>
 
-      <div className="fixed-bottom">
-      <form className="createMessageForm" onSubmit={this.handleSubmit}>
-       <FormGroup>
-        <ControlLabel>New Message:</ControlLabel>
-          <FormControl type="text" value={this.state.newMessage} placeholder="Enter message"
+      <form className="createNewMessage" onSubmit={this.handleSubmit}>
+        <label>New Message: </label>
+          <input type="text" value={this.state.newMessage} placeholder="Enter message"
             onChange={this.createMessage} />
-          <input type="submit" value="Submit" />
-        </FormGroup>
-        </form>
-      </div>
+          <input className="submit-button" type="submit" value="Submit" />
+      </form>
+
       </div>
     )
   }

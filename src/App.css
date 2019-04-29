@@ -1,25 +1,84 @@
-.column1 {
-  float: left;
-  width: 25%;
-  background-color: #eeeeee;
+.app-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 100px auto 100px;
+  grid-template-areas:
+  "a h h h h h h h h h h h"
+  "a m m m m m m m m m m m"
+  "f m m m m m m m m m m m";
+}
+
+.app-name {
+  grid-area: h;
+  text-align: left;
+  font-size: 4em;
+  background-color: #36096d;
+  background-image: linear-gradient(315deg, #033952 0%, #37d5d6 74%);
+//  -webkit-background-clip: text;
+//  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px #000608;
+  color: white;
+}
+
+button {
+  border: none;
+  height: auto;
+  width: auto;
+  padding: 10px;
+  margin: 2px;
+  background: #00CED1;
+  color: #ffffff;
+  font-size: 1em;
+}
+
+.user-name {
+  font-size: 1.5em;
+  border-bottom: 3px solid #055b83;
+  text-shadow: 2px 2px 4px #000608;
+}
+
+.room-list {
+  grid-area: a;
+  padding: 40px;
+  background-color: #033952;
+  color: white;
+}
+
+.eachRoom {
+  font-size: 1.25em;
+  text-shadow: 2px 2px 4px #000608;
+}
+
+.eachRoom:hover {
+  background-color: #055b83;
   padding: 10px;
 }
 
-/*.userButtons {
-  background-color: #F1F1F1;
-  float: right;
-  font-family: brandon-grotesque;
-  max-width: 500px;
+.createNewRoom label {
+  padding-top: 20px;
+  font-size: 1.5em;
+  text-shadow: 2px 2px 4px #000608;
 }
 
-.rooms {
-  border-right-style: solid;
+.submit-button {
+  background: #00CED1;
+  margin: 10px;
 }
-*/
+
+main {
+  grid-area: m;
+  align-content: end;
+}
+
+.createNewMessage {
+
+}
+
 footer {
-  width: auto;
-  padding: 20px;
-  text-align: center;
-  box-sizing: border-box;
-  background-color: #F1F1F1;
+  grid-area: f;
+  border-top: 1px solid #055b83;
+  background-color: #033952;
+  color: white;
+  justify-content: center;
 }

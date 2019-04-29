@@ -3,7 +3,7 @@ import * as firebase from 'firebase';
 import RoomList from './components/RoomList';
 import MessageList from './components/MessageList';
 import User from './components/User';
-import {Navbar, Nav, NavItem, Grid, Row, Col} from 'react-bootstrap';
+import './App.css';
 
 var config = {
     apiKey: "AIzaSyAICwODjMaxn8gJQAP6iafA6uDGburODX0",
@@ -40,32 +40,28 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-      <Navbar>
-        <Navbar.Header>
-          <Navbar.Brand>Hello</Navbar.Brand>
-            </Navbar.Header>
-            <Nav pullRight>
-            <NavItem>
-            <User firebase={firebase} user={this.state.user} setUser={this.setUser}/>
-          </NavItem>
-        </Nav>
-      </Navbar>
+      <div className="app-container">
+      
+        <header className="app-name">Hello</header>
 
-      <Grid>
-       <Row className="show-grid">
-          <Col xs={6} md={4}>
-            <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom} user={this.state.user}/>
-              </Col>
-            <Col xs={12} md={8}>
-            <MessageList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom} user={this.state.user}/>
-          </Col>
-        </Row>
+        <aside className="room-list">
+          <User firebase={firebase}
+              user={this.state.user}
+              setUser={this.setUser}/>
 
-        <Row>
-          <Col xs={12} md={12}>Copyright 2018 Laura Meehan</Col>
-        </Row>
-      </Grid>
+          <RoomList firebase={firebase}
+                    activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}
+                    user={this.state.user}/>
+        </aside>
+
+        <main className="message-list">
+          <MessageList firebase={firebase}
+                       activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}
+                       user={this.state.user}/>
+        </main>
+
+        <footer>Copyright 2018 - 2019 Laura Meehan</footer>
+
       </div>
     );
   }
