@@ -13,33 +13,46 @@
 .app-name {
   grid-area: h;
   text-align: left;
-  font-size: 4em;
+  font-size: 4.2em;
   font-style: oblique;
   font-family: 'Sacramento', Roboto;
   background-color: #F5F8F9;
   text-shadow: 1px 1px 2px #000608;
   color: #F0676A;
   padding-left: 10px;
+/*  -webkit-box-shadow: 0 8px 6px -6px black;
+   -moz-box-shadow: 0 8px 6px -6px black;
+        box-shadow: 0 8px 6px -6px black;
+*/
 }
 
 /* Side Menu */
 .user-icon {
   font-size: 84px;
+  line-height: 0.5;
 }
 
 button {
   height: auto;
   width: auto;
-  padding: 10px;
+  padding: 7px 10px;
   margin: 2px;
   background: #E78E4F;
   color: #ffffff;
   font-size: 20px;
   border-radius: 4px;
+  -webkit-box-shadow: 0 8px 6px -6px black;
+   -moz-box-shadow: 0 8px 6px -6px black;
+        box-shadow: 0 8px 6px -6px black;
+}
+
+.sign-in-out {
+  margin-bottom: 20px;
 }
 
 .user-name {
-  font-size: 1.5em;
+  font-size: 1.75em;
+  font-weight: bolder;
   border-bottom: 3px solid #055b83;
   text-shadow: 2px 2px 4px #000608;
 }
@@ -53,8 +66,9 @@ button {
 }
 
 .eachRoom {
-  font-size: 1.25em;
-  text-shadow: 2px 2px 4px #000608;
+  font-size: 1.45em;
+  font-weight: bolder;
+/*  text-shadow: 2px 2px 4px #000608; */
 }
 
 .eachRoom:hover {
@@ -65,6 +79,7 @@ button {
 .createNewRoom label {
   padding-top: 20px;
   font-size: 1.5em;
+  font-weight: bolder;
   text-shadow: 2px 2px 4px #000608;
 }
 
@@ -76,8 +91,8 @@ button {
   color: white;
 }
 
-.addroom-button ion-icon{
-  padding-right: 10px;
+.submit-button ion-icon{
+  padding-right: 15px;
 }
 
 /* Main Message Section */
@@ -118,7 +133,7 @@ button {
 .createNewMessage {
   position: fixed;
   bottom: 0;
-  width: 85%;
+  justify-items: stretch;
 }
 
 .message-input {
