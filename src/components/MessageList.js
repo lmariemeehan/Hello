@@ -38,9 +38,9 @@ class MessageList extends Component {
   this.setState({newMessage: ""});
   }
 
-  formatTime(input) {
-    let time = new Date(input);
-    return time.toGMTString() + '\n' + time.toLocaleTimeString();
+  formatTime(unixDate) {
+    let time = new Date(unixDate);
+    return time.toLocaleString();
   }
 
   render() {
@@ -54,7 +54,7 @@ class MessageList extends Component {
           .map((message, index)=>
             <table key={index}>
               <tr>
-                <th><ion-icon name="contact"></ion-icon></th>
+                <th><ion-icon size="large" name="contact"></ion-icon></th>
                 <th className="message-username">{message.username} |</th>
                 <th className="message-sentAt">{this.formatTime(message.sentAt)}</th>
               </tr>
@@ -69,7 +69,7 @@ class MessageList extends Component {
         <label>New Message: </label>
           <input type="text" value={this.state.newMessage} placeholder="Enter message"
             onChange={this.createMessage} />
-          <input className="submit-button" type="submit" value="Submit" />
+          <input className="messagesend-button" type="submit" value="Send" />
       </form>
 
       </div>

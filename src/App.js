@@ -55,15 +55,17 @@ class App extends Component {
                     user={this.state.user}/>
         </aside>
 
-        <main className="message-list">
+        <main className="main-section">
+          <div className="transbox">
           <MessageList firebase={firebase}
                        activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}
                        user={this.state.user}/>
+          </div>
         </main>
 
         <footer>
           <p>Copyright 2018 - 2019 Laura Meehan</p>
-          <a href="https://github.com/lmariemeehan/Hello"><ion-icon name="logo-github"></ion-icon> Check it out!</a>
+          <a href="https://github.com/lmariemeehan/Hello"><ion-icon name="logo-github"></ion-icon> Check it out :)</a>
           </footer>
 
       </div>

@@ -45,7 +45,8 @@ class RoomList extends Component {
 						Create New Room:
 					<input type="text" value={this.state.newRoomName} placeholder="Room Name" onChange={this.createRoom.bind(this)}/>
 					</label>
-					<input className="submit-button" type="submit" value="Submit" />
+
+					<button className="addroom-button"><ion-icon name="add-circle"></ion-icon>Add Room</button>
 				</form>
 
 			</div>

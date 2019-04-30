@@ -1,12 +1,12 @@
 .app-container {
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 100px auto 1fr;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 100px 2fr 1fr;
   grid-template-areas:
-  "a h h h h h h h h h h h"
-  "a m m m m m m m m m m m"
-  "f m m m m m m m m m m m";
+  "a h h h h h h h"
+  "a m m m m m m m"
+  "f m m m m m m m";
 }
 
 .app-name {
@@ -19,6 +19,10 @@
   text-shadow: 1px 1px 2px #000608;
   color: #F0676A;
   padding-left: 10px;
+}
+
+.user-icon {
+  font-size: 84px;
 }
 
 button {
@@ -38,10 +42,6 @@ button {
   text-shadow: 2px 2px 4px #000608;
 }
 
-.user-icon {
-  padding-right: 5px;
-}
-
 .room-list {
   grid-area: a;
   padding: 40px;
@@ -52,13 +52,12 @@ button {
 
 .eachRoom {
   font-size: 1.25em;
-//  text-shadow: 2px 2px 4px #000608;
+  text-shadow: 2px 2px 4px #000608;
 }
 
 .eachRoom:hover {
   background-color: #055b83;
-  padding: 10px;
-
+  padding: 10px 40px;
 }
 
 .createNewRoom label {
@@ -67,13 +66,18 @@ button {
   text-shadow: 2px 2px 4px #000608;
 }
 
-.submit-button {
+.addroom-button {
   background: #E78E4F;
   margin: 10px;
   border-radius: 4px;
+  padding: 2px 20px;
 }
 
-main {
+.addroom-button ion-icon{
+  padding-right: 10px;
+}
+
+.main-section {
   grid-area: m;
   align-content: end;
   font-family: 'Economica', 'serif';
@@ -92,6 +96,15 @@ main {
 
 .message-content {
   padding-bottom: 20px;
+}
+
+.createNewMessage {
+  position: fixed;
+  bottom: 0;
+}
+
+.createNewMessage input {
+  grid-area: m;
 }
 
 footer {
