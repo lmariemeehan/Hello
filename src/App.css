@@ -9,6 +9,7 @@
   "f m m m m m m m";
 }
 
+/* Header */
 .app-name {
   grid-area: h;
   text-align: left;
@@ -21,6 +22,7 @@
   padding-left: 10px;
 }
 
+/* Side Menu */
 .user-icon {
   font-size: 84px;
 }
@@ -66,16 +68,19 @@ button {
   text-shadow: 2px 2px 4px #000608;
 }
 
-.addroom-button {
+.submit-button {
   background: #E78E4F;
   margin: 10px;
   border-radius: 4px;
   padding: 2px 20px;
+  color: white;
 }
 
 .addroom-button ion-icon{
   padding-right: 10px;
 }
+
+/* Main Message Section */
 
 .main-section {
   grid-area: m;
@@ -85,12 +90,24 @@ button {
   padding: 15px;
 }
 
+.retrieveMessages li {
+  list-style-type: none;
+}
+
+.contact-icon {
+  font-size: 35px;
+  margin-right: 10px;
+  color: #055b83;
+}
+
 .message-username {
   color: #033952;
   font-size: 20px;
+  text-align: left;
 }
 
 .message-sentAt {
+  margin-left: 10px;
   color: #ad92a2;
 }
 
@@ -101,12 +118,14 @@ button {
 .createNewMessage {
   position: fixed;
   bottom: 0;
+  width: 85%;
 }
 
-.createNewMessage input {
-  grid-area: m;
+.message-input {
+  grid-column: 3 / 7 ;
 }
 
+/* Footer */
 footer {
   grid-area: f;
   border-top: 5px solid #055b83;

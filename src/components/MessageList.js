@@ -52,24 +52,24 @@ class MessageList extends Component {
         {this.state.messages
           .filter(message => message.roomID === this.props.activeRoom.key)
           .map((message, index)=>
-            <table key={index}>
-              <tr>
-                <th><ion-icon size="large" name="contact"></ion-icon></th>
-                <th className="message-username">{message.username} |</th>
-                <th className="message-sentAt">{this.formatTime(message.sentAt)}</th>
-              </tr>
-              <tr>
-                <td className="message-content">{message.content}</td>
-              </tr>
-            </table>
+            <ul key={index}>
+              <li>
+                <div>
+                  <span className="contact-icon"><ion-icon name="contact"></ion-icon></span>
+                  <span className="message-username">{message.username} |</span>
+                  <span className="message-sentAt">{this.formatTime(message.sentAt)}</span>
+                </div>
+                  <div className="message-content">{message.content}</div>
+              </li>
+            </ul>
           )}
       </div>
 
       <form className="createNewMessage" onSubmit={this.handleSubmit}>
         <label>New Message: </label>
-          <input type="text" value={this.state.newMessage} placeholder="Enter message"
+          <input className="message-input" type="text" value={this.state.newMessage} placeholder="Enter message"
             onChange={this.createMessage} />
-          <input className="messagesend-button" type="submit" value="Send" />
+          <button className="submit-button">Send</button>
       </form>
 
       </div>
