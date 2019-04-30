@@ -11,6 +11,7 @@
 
 /* Header */
 .app-name {
+  background-image: url('abstract-3169983_1920.jpg');
   grid-area: h;
   text-align: left;
   font-size: 4.2em;
@@ -20,10 +21,10 @@
   text-shadow: 1px 1px 2px #000608;
   color: #F0676A;
   padding-left: 10px;
-/*  -webkit-box-shadow: 0 8px 6px -6px black;
-   -moz-box-shadow: 0 8px 6px -6px black;
-        box-shadow: 0 8px 6px -6px black;
-*/
+  -webkit-box-shadow: 0 6px 6px -6px black;
+   -moz-box-shadow: 0 6px 6px -6px black;
+        box-shadow: 0 6px 6px -6px black;
+
 }
 
 /* Side Menu */
@@ -85,7 +86,7 @@ button {
 
 .submit-button {
   background: #E78E4F;
-  margin: 10px;
+  margin: 5px 10px;
   border-radius: 4px;
   padding: 2px 20px;
   color: white;
@@ -146,5 +147,5 @@ footer {
   border-top: 5px solid #055b83;
   background-color: #033952;
   color: white;
-  justify-content: center;
+  padding-left: 10px;
 }
