@@ -46,7 +46,7 @@ class MessageList extends Component {
   render() {
     return (
       <div className="messages">
-      <h3>{this.props.activeRoom.name}</h3>
+      <h2>{this.props.activeRoom.name}</h2>
 
       <div className= "retrieveMessages">
         {this.state.messages
@@ -69,7 +69,7 @@ class MessageList extends Component {
         <label>New Message: </label>
           <input className="message-input" type="text" value={this.state.newMessage} placeholder="Enter message"
             onChange={this.createMessage} />
-          <button className="submit-button">Send</button>
+          <button className="newmessage-button">Send <i class="far fa-paper-plane"></i></button>
       </form>
 
       </div>

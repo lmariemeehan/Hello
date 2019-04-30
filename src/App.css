@@ -6,7 +6,7 @@
   grid-template-areas:
   "a h h h h h h h"
   "a m m m m m m m"
-  "f m m m m m m m";
+  "f nm nm nm nm nm nm nm";
 }
 
 /* Header */
@@ -143,8 +143,16 @@ button {
   font-size: 1.2em;
 }
 
-.message-input {
-  grid-column: 3 / 7 ;
+.newmessage-button {
+  background: #E78E4F;
+  margin: 5px 10px;
+  border-radius: 4px;
+  padding: 2px 20px;
+  color: white;
+}
+
+.newmessage-button i {
+  padding-left: 12px;
 }
 
 /* Footer */

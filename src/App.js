@@ -63,6 +63,7 @@ class App extends Component {
 
         <footer>
           <p>Copyright 2018 - 2019 Laura Meehan</p>
+          <p>[Formerly known as Bloc Chat]</p>
           <a href="https://github.com/lmariemeehan/Hello"><ion-icon name="logo-github"></ion-icon> Check it out :)</a>
           </footer>
 
