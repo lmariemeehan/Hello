@@ -42,7 +42,7 @@ class App extends Component {
     return (
       <div className="app-container">
 
-        <header className="app-name">Hello</header>
+        <header className="app-name">Hello...  <span className="header-icon"><i class="far fa-comment-dots"></i></span></header>
 
         <aside className="room-list">
 
@@ -56,11 +56,9 @@ class App extends Component {
         </aside>
 
         <main className="main-section">
-          <div className="transbox">
           <MessageList firebase={firebase}
                        activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}
                        user={this.state.user}/>
-          </div>
         </main>
 
         <footer>

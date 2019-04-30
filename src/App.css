@@ -14,7 +14,8 @@
   background-image: url('abstract-3169983_1920.jpg');
   grid-area: h;
   text-align: left;
-  font-size: 4.2em;
+  font-size: 4.5em;
+  font-weight: 500;
   font-style: oblique;
   font-family: 'Sacramento', Roboto;
   background-color: #F5F8F9;
@@ -25,6 +26,11 @@
    -moz-box-shadow: 0 6px 6px -6px black;
         box-shadow: 0 6px 6px -6px black;
 
+}
+
+.header-icon {
+  color: #055b83;
+  font-size: 45px;
 }
 
 /* Side Menu */
@@ -134,7 +140,7 @@ button {
 .createNewMessage {
   position: fixed;
   bottom: 0;
-  justify-items: stretch;
+  font-size: 1.2em;
 }
 
 .message-input {
@@ -144,7 +150,7 @@ button {
 /* Footer */
 footer {
   grid-area: f;
-  border-top: 5px solid #055b83;
+  border-top: 7px solid #055b83;
   background-color: #033952;
   color: white;
   padding-left: 10px;
