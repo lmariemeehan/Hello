@@ -9,31 +9,29 @@
   "f nm nm nm nm nm nm nm";
 }
 
-/* Header */
+/***   Header   ***/
 .app-name {
-  background-image: url('abstract-3169983_1920.jpg');
   grid-area: h;
   text-align: left;
   font-size: 4.5em;
   font-weight: 500;
   font-style: oblique;
   font-family: 'Sacramento', Roboto;
-  background-color: #F5F8F9;
+  background-color: #055b83;
   text-shadow: 1px 1px 2px #000608;
   color: #F0676A;
   padding-left: 10px;
   -webkit-box-shadow: 0 6px 6px -6px black;
    -moz-box-shadow: 0 6px 6px -6px black;
         box-shadow: 0 6px 6px -6px black;
-
 }
 
 .header-icon {
-  color: #055b83;
+  color: #FCFBFB;
   font-size: 45px;
 }
 
-/* Side Menu */
+/***   Side Menu   ***/
 .user-icon {
   font-size: 84px;
   line-height: 0.5;
@@ -45,7 +43,7 @@ button {
   padding: 7px 10px;
   margin: 2px;
   background: #E78E4F;
-  color: #ffffff;
+  color: #fff;
   font-size: 20px;
   border-radius: 4px;
   -webkit-box-shadow: 0 8px 6px -6px black;
@@ -102,7 +100,7 @@ button {
   padding-right: 15px;
 }
 
-/* Main Message Section */
+/***   Main Message Section   ***/
 
 .main-section {
   grid-area: m;
@@ -162,4 +160,5 @@ footer {
   background-color: #033952;
   color: white;
   padding-left: 10px;
+  font-family: 'Economica', 'serif';
 }
