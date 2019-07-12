@@ -66,10 +66,9 @@ class MessageList extends Component {
       </div>
 
       <form className="createNewMessage" onSubmit={this.handleSubmit}>
-        <label>New Message: </label>
-          <input className="message-input" type="text" value={this.state.newMessage} placeholder="Enter message"
+          <input className="message-input" type="text" value={this.state.newMessage} placeholder="New message..."
             onChange={this.createMessage} />
-          <button className="newmessage-button">Send <i class="far fa-paper-plane"></i></button>
+          <button className="newmessage-button">Send <i className="far fa-paper-plane"></i></button>
       </form>
 
       </div>

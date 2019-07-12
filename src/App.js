@@ -42,7 +42,7 @@ class App extends Component {
     return (
       <div className="app-container">
 
-        <header className="app-name">Hello...  <span className="header-icon"><i class="far fa-comment-dots"></i></span></header>
+        <header className="app-name">Hello...  <span className="header-icon"><i className="far fa-comment-dots"></i></span></header>
 
         <aside className="room-list">
 
@@ -65,7 +65,7 @@ class App extends Component {
           <p>Copyright 2018 - 2019 Laura Meehan</p>
           <p>[Formerly known as Bloc Chat]</p>
           <a href="https://github.com/lmariemeehan/Hello"><ion-icon name="logo-github"></ion-icon> Check it out :)</a>
-          </footer>
+        </footer>
 
       </div>
     );

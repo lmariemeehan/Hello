@@ -36,14 +36,15 @@ class RoomList extends Component {
     return (
 			<div>
 
-  			<table className="retrievingRoomList">{this.state.rooms.map((room) =>
-					(<tr className="eachRoom" key={room.name} onClick={() => this.props.setActiveRoom(room)}>{room.name}</tr>))}
+  			<table className="retrievingRoomList">
+					<tbody>{this.state.rooms.map((room, index) =>
+						(<tr className="eachRoom" key={index} onClick={() => this.props.setActiveRoom(room)}>{room.name}</tr>))}</tbody>
 				</table>
 
 				<form className="createNewRoom" onSubmit={this.handleSubmit.bind(this)}>
 					<label>
 						Create New Room:
-					<input type="text" value={this.state.newRoomName} placeholder="Room Name" onChange={this.createRoom.bind(this)}/>
+					<input type="text" value={this.state.newRoomName} placeholder="New Room..." onChange={this.createRoom.bind(this)}/>
 					</label>
 
 					<button className="submit-button"><ion-icon name="add-circle"></ion-icon>Add Room</button>
