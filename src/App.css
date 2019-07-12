@@ -37,7 +37,7 @@
   line-height: 0.5;
 }
 
-/* Add room button */
+/* Sign in/out buttons */
 button {
   height: auto;
   width: auto;
@@ -136,27 +136,29 @@ button {
   padding-bottom: 20px;
 }
 
-.createNewMessage {
-  position: fixed;
-  bottom: 0;
+.createNewMessage input[type="text"] {
+  width: 75%;
+  padding: 6px;
+  margin-left: 270px;
+  margin-bottom: 1rem;
   font-size: 1.2em;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  float: left;
 }
 
 .newmessage-button {
   background: #E78E4F;
-  margin: 5px 10px;
+  margin-bottom: 1rem;
   border-radius: 4px;
   padding: 2px 20px;
   color: white;
+  float: right;
 }
 
 .newmessage-button i {
   padding-left: 12px;
-}
-
-.createNewMessage input[type="text"] {
-  margin-left: 10px;
-  width: 500px;
 }
 
 /* Footer */
