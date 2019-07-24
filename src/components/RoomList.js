@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/roomlist.css';
 
 class RoomList extends Component {
 	constructor(props) {
@@ -19,6 +20,14 @@ class RoomList extends Component {
 		});
 	}
 
+	componentWillUnmount() {
+		this.roomsRef.on('child_removed', snapshot => {
+			const deletedroom = snapshot.val();
+			deletedroom.key = snapshot.key;
+		this.setState({ rooms: this.state.rooms.filter(room => room.key !== deletedroom.key)})
+		});
+	}
+
 	createRoom(event){
 		this.setState({newRoomName: event.target.value});
 	}
@@ -30,6 +39,12 @@ class RoomList extends Component {
 			name: this.state.newRoomName,
 	});
 		this.setState({newRoomName: ''});
+	}
+
+	deletedRoom(event, roomID) {
+		event.preventDefault();
+		this.roomsRef.child(roomID.key).remove();
+		this.props.setActiveRoom("");
 	}
 
   render() {

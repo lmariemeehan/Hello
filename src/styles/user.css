@@ -1,0 +1,29 @@
+/***   User section   ***/
+
+.user-icon {
+  font-size: 84px;
+  line-height: 0.5;
+}
+
+.user-name {
+  font-size: 1.75em;
+  font-weight: bolder;
+  border-bottom: 3px solid #055b83;
+  text-shadow: 2px 2px 4px #000608;
+  padding-bottom: 7px;
+}
+
+/* Sign in/out buttons */
+.sign-in-out {
+  margin: 5px 2px 20px 2px;
+  height: auto;
+  width: auto;
+  padding: 7px 10px;
+  background: #E78E4F;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 8px 6px -6px black;
+   -moz-box-shadow: 0 8px 6px -6px black;
+        box-shadow: 0 8px 6px -6px black;
+}

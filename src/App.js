@@ -42,10 +42,7 @@ class App extends Component {
     return (
       <div className="app-container">
 
-        <header className="app-name">Hello...  <span className="header-icon"><i className="far fa-comment-dots"></i></span></header>
-
-        <aside className="room-list">
-
+        <div className="room-list">
           <User firebase={firebase}
                 user={this.state.user}
                 setUser={this.setUser}/>
@@ -53,19 +50,20 @@ class App extends Component {
           <RoomList firebase={firebase}
                     activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}
                     user={this.state.user}/>
-        </aside>
+          <footer>
+            <p>Copyright 2018 - 2019 Laura Meehan</p>
+            <p>[Formerly known as Bloc Chat]</p>
+            <a href="https://github.com/lmariemeehan/Hello" target="_blank"><ion-icon name="logo-github"></ion-icon>Check it out :)</a>
+          </footer>
+        </div>
 
         <main className="main-section">
+          <header className="app-name">Hello...  <span className="header-icon"><i className="far fa-comment-dots"></i></span></header>
+
           <MessageList firebase={firebase}
                        activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}
                        user={this.state.user}/>
         </main>
-
-        <footer>
-          <p>Copyright 2018 - 2019 Laura Meehan</p>
-          <p>[Formerly known as Bloc Chat]</p>
-          <a href="https://github.com/lmariemeehan/Hello" target="_blank"><ion-icon name="logo-github"></ion-icon>Check it out :)</a>
-        </footer>
 
       </div>
     );

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/messagelist.css';
 
 class MessageList extends Component {
   constructor(props){
@@ -65,16 +66,13 @@ class MessageList extends Component {
           )}
       </div>
 
-      <div className="fixed-bottom">
+      {/*<div className="fixed-bottom">*/}
         <form className="createNewMessage" onSubmit={this.handleSubmit}>
-
           <input className="message-input" type="text" value={this.state.newMessage} placeholder="New message..."
           onChange={this.createMessage} />
-
           <button className="newmessage-button">Send <i className="far fa-paper-plane"></i></button>
-
         </form>
-      </div>
+      {/*</div>*/}
 
       </div>
     )
