@@ -8,13 +8,13 @@
 
 /***   Header   ***/
 .app-name {
-  text-align: center;
+  text-align:left;
   font-size: 4.5em;
   font-weight: 700;
   font-style: oblique;
   font-family: 'Sacramento', Roboto;
   text-shadow: 1px 1px 2px #000608;
-  color: #E78E4F; /* Coral */
+  color: #E78E4F;
 /*  background-color: #055b83;
   -webkit-box-shadow: 0 6px 6px -6px black;
    -moz-box-shadow: 0 6px 6px -6px black;
@@ -38,7 +38,7 @@ footer {
   font-size: 20px;
   font-weight: 600;
   line-height: normal;
-  border-top: 3px solid #055b83; /* blue */
+  border-top: 3px solid #349779; /* dark green */
   margin-top: 1rem;
 }
 

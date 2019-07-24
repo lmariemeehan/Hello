@@ -7,9 +7,10 @@
 }
 
 .messages h2{
-  color: #54C4A2;
+  color: #E78E4F;
   font-weight: 700;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .retrieveMessages li {
@@ -23,7 +24,7 @@
 }
 
 .message-username {
-  color: #033952;
+  color: #033952; /* blue */
   font-size: 20px;
   text-align: left;
 }
@@ -35,6 +36,7 @@
 
 .message-content {
   padding-bottom: 20px;
+  color: #022839;
 }
 
 .createNewMessage {
