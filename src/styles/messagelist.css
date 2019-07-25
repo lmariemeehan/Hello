@@ -3,7 +3,6 @@
   align-content: center;
   font-family: 'Economica', 'serif';
   font-size: large;
-  padding: 15px;
 }
 
 .messages h2{
@@ -50,6 +49,7 @@
 
 .createNewMessage input[type="text"] {
   padding: 6px;
+  margin-left: 10px;
   margin-bottom: 1rem;
   font-size: 1.2em;
   border: 2px solid #E78E4F; /* orange */
