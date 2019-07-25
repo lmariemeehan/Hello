@@ -12,7 +12,7 @@
 * JSX - This was written with JSX which is JavaScript expressions with an HTML-like syntax
 * React Router - to help with client-side page transitions
 * Git - version-control
-* CSS - for layout and style
+* CSS/CSS Grid- for layout and style
 * Bootstrap - for some style
 * React - timestamp - for showing dates/times of newly created messages
 
