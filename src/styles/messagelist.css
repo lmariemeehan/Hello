@@ -9,9 +9,10 @@
   color: #033952;
   text-align: center;
   margin: 1rem 0;
-  font-weight: 700;
-  font-size: 40px;
-  font-family: 'Sacramento', Roboto;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-decoration: underline;
 }
 
 .retrieveMessages li {

@@ -8,17 +8,20 @@
 /***   Header   ***/
 header {
   text-align:left;
-  font-size: 4em;
+  font-size: 3em;
   font-weight: 600;
   font-style: oblique;
   font-family: 'Sacramento', Roboto;
   text-shadow: 1px 1px 2px #000608;
   color: #E78E4F; /* orange */
-  background-color: #f8f7e7; /* beige */
   padding-left: 10px;
+  border: 2px solid #E78E4F; /* orange */
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .header-icon {
+  padding-left: 10px;
   position:fixed;
   color: #055b83;
   font-size: 45px;
@@ -27,10 +30,11 @@ header {
 /***   Footer   ***/
 footer {
   background-color: #54C4A2;
+  text-align: center;
   align-self: end;
   color: white;
   padding-top: 15px;
-  font-family: 'Economica', 'serif';
+  font-family: 'Economica', serif;
   font-size: 20px;
   font-weight: 600;
   line-height: normal;
@@ -41,4 +45,12 @@ footer {
 footer ion-icon {
   font-size: 20px;
   margin-right: 5px;
+}
+
+footer a {
+  color: #fff;
+}
+
+footer a:hover {
+  color: #055b83; /* blue */
 }
