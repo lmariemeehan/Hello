@@ -13,9 +13,9 @@ header {
   font-style: oblique;
   font-family: 'Sacramento', Roboto;
   text-shadow: 1px 1px 2px #000608;
-  color: #E78E4F; /* orange */
+  color: #F15978; /* pinkish */
   padding-left: 10px;
-  border: 2px solid #E78E4F; /* orange */
+  border-bottom: 3px solid #F5F5F5; /* orange */
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
@@ -29,16 +29,16 @@ header {
 
 /***   Footer   ***/
 footer {
-  background-color: #54C4A2;
+  background-color: #F5F5F5;
   text-align: center;
   align-self: end;
-  color: white;
+  color: #055b83;
   padding-top: 15px;
   font-family: 'Economica', serif;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   line-height: normal;
-  border-top: 3px solid #349779; /* dark green */
+  border-top: 5px solid #FFF; /* dark green */
   margin-top: 1rem;
 }
 
@@ -48,7 +48,7 @@ footer ion-icon {
 }
 
 footer a {
-  color: #fff;
+  color: #055b83;
 }
 
 footer a:hover {

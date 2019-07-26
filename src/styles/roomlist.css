@@ -1,10 +1,9 @@
 /***   Room List Side Menu   ***/
 .room-list {
-  justify-self: start;
   height: 100vh;
   padding: 20px;
-  background-color: #54C4A2; /*light green*/
-  color: white;
+  background-color: #F5F5F5; /*light grey*/
+  color: #055b83; /* almost black */
   font-family: 'Economica', 'Open Sans';
 }
 
@@ -18,7 +17,7 @@
 }
 
 .eachRoom:hover {
-  color: #055b83; /* blue */
+  color: #4c9fb2; /* dark blue */
   padding: 10px 40px;
 }
 
@@ -31,7 +30,7 @@
   padding: 6px;
   margin-top: 1rem;
   font-size: 1.2em;
-  border: 2px solid #E78E4F; /* orange */
+  border: 2px solid #F15978; /* orange */
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   box-sizing: border-box;
@@ -40,13 +39,13 @@
 
 .createNewRoom .submit-button {
   padding: 6px;
-  background: #E78E4F;
+  background: #F15978;
   color: white;
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-left: -2px;
   box-sizing: border-box;
-  border: 2px solid #E78E4F; /* orange */
+  border: 2px solid #F15978; /* orange */
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }

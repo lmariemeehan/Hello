@@ -3,13 +3,15 @@
 .user-icon {
   font-size: 84px;
   line-height: 0.5;
+  color: #f7a0b1;
 }
 
 .user-name {
   font-size: 1.75em;
   font-weight: bolder;
-  border-bottom: 3px solid #349779; /* darker green */
-  text-shadow: 2px 2px 4px #000608;
+  color: #3B3B3B;
+  border-bottom: 3px solid #FFF; /* light blue */
+  text-shadow: 2px 2px 4px #FFF;
   padding-bottom: 7px;
 }
 
@@ -19,7 +21,7 @@
   height: auto;
   width: auto;
   padding: 7px 10px;
-  background: #E78E4F;
+  background: #F15978; /* light pink */
   color: #fff;
   font-size: 20px;
   border-radius: 4px;

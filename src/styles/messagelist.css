@@ -12,7 +12,6 @@
   font-weight: 600;
   font-size: 24px;
   letter-spacing: 2px;
-  text-decoration: underline;
 }
 
 .retrieveMessages li {
@@ -44,7 +43,6 @@
 .createNewMessage {
   display: grid;
   grid-template-columns: 90% 10%;
-  justify-self: end;
   margin-bottom: 0;
 }
 
@@ -52,17 +50,17 @@
   margin-left: 10px;
   margin-bottom: 1rem;
   font-size: 1em;
-  border: 2px solid #E78E4F; /* orange */
+  border: 2px solid #F15978; /* pinkish */
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   box-sizing: border-box;
 }
 
 .newmessage-button {
-  background: #E78E4F;
+  background: #F15978;
   margin: 0 10px 1rem -2px;
   box-sizing: border-box;
-  border: 2px solid #E78E4F; /* orange */
+  border: 2px solid #F15978; /* pinkish */
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   color: white;
