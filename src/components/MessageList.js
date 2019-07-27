@@ -47,7 +47,8 @@ class MessageList extends Component {
   render() {
     return (
       <div className="messages">
-      <h2>{this.props.activeRoom.name}</h2>
+
+      <h2 className="activeRoom-name">{this.props.activeRoom.name}</h2>
 
       <div className= "retrieveMessages">
         {this.state.messages

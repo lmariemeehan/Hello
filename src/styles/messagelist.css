@@ -5,6 +5,11 @@
   font-size: large;
 }
 
+.messages {
+  display: grid;
+  grid-template-rows: 1fr auto 30px;
+}
+
 .messages h2{
   color: #033952;
   text-align: center;
