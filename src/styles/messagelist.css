@@ -7,13 +7,14 @@
 
 .messages {
   display: grid;
-  grid-template-rows: 1fr auto 30px;
+  height: 90vh;
+  grid-template-rows: 70px 1fr 40px;
 }
 
 .messages h2{
   color: #033952;
   text-align: center;
-  margin: 1rem 0;
+  margin-top: 1rem;
   font-weight: 600;
   font-size: 24px;
   letter-spacing: 2px;
@@ -45,6 +46,7 @@
   color: #022839;
 }
 
+/*** New message form  ***/
 .createNewMessage {
   display: grid;
   grid-template-columns: 90% 10%;
@@ -52,6 +54,7 @@
 }
 
 .createNewMessage input[type="text"] {
+  padding: 5px 0;
   margin-left: 10px;
   margin-bottom: 1rem;
   font-size: 1em;
