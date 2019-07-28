@@ -58,7 +58,7 @@ class App extends Component {
         </div>
 
         <main className="main-section">
-          <header className="app-name">Hello...  <span className="header-icon"><i className="far fa-comment-dots"></i></span></header>
+          <header className="app-name">Hello... <span className="far fa-comment-dots"></span></header>
 
           <MessageList firebase={firebase}
                        activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}

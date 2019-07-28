@@ -26,14 +26,9 @@ class User extends Component {
 
     <p className="user-name">{this.props.user ? this.props.user.displayName : "GUEST" } </p>
 
-    <button className="sign-in-out" onClick={this.signIn.bind(this)}>
-      Sign In
-    </button>
-
-    <button className="sign-in-out" onClick={this.signOut.bind(this)}>
-      Sign Out
-    </button>
-
+    <div>{this.props.user ? <button className="sign-in-out" onClick={this.signOut.bind(this)}>Sign Out </button> :
+      <button className="sign-in-out" onClick={this.signIn.bind(this)}>Sign In</button>}
+    </div>
     </section>
 
   );
