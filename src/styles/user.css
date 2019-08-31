@@ -9,9 +9,9 @@
 .user-name {
   font-size: 1.75em;
   font-weight: bolder;
-  color: #3B3B3B;
+  color: #4c9fb2;
   border-bottom: 3px solid #FFF; /* light blue */
-  text-shadow: 2px 2px 4px #808080;
+  /*text-shadow: 2px 2px 4px #808080;*/
   padding-bottom: 7px;
 }
 
