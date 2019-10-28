@@ -53,7 +53,8 @@ class RoomList extends Component {
 
   			<table className="retrievingRoomList">
 					<tbody>{this.state.rooms.map((room, index) =>
-						(<tr className="eachRoom" key={index} onClick={() => this.props.setActiveRoom(room)}>{room.name}</tr>))}</tbody>
+						(<tr className="eachRoom" key={index} onClick={() => this.props.setActiveRoom(room)}>{room.name}</tr>))}
+					</tbody>
 				</table>
 
 				<form className="createNewRoom" onSubmit={this.handleSubmit.bind(this)}>
