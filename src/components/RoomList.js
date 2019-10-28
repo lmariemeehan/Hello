@@ -10,26 +10,21 @@ class RoomList extends Component {
 		};
 
 	this.roomsRef = this.props.firebase.database().ref('rooms');
+	this.deleteRoom = this.deleteRoom.bind(this);
+	this.handleSubmit = this.handleSubmit.bind(this);
+	this.createRoom = this.createRoom.bind(this);
 	}
 
 	componentDidMount() {
 		this.roomsRef.on('child_added', snapshot => {
 			const room = snapshot.val();
 			room.key = snapshot.key;
-		this.setState({ rooms: this.state.rooms.concat(room)})
+		this.setState({ rooms: this.state.rooms.concat(room) })
 		});
 	}
 
-	componentWillUnmount() {
-		this.roomsRef.on('child_removed', snapshot => {
-			const deletedroom = snapshot.val();
-			deletedroom.key = snapshot.key;
-		this.setState({ rooms: this.state.rooms.filter(room => room.key !== deletedroom.key)})
-		});
-	}
-
-	createRoom(event){
-		this.setState({newRoomName: event.target.value});
+	createRoom(e){
+		this.setState({newRoomName: e.target.value});
 	}
 
 	handleSubmit(event) {
@@ -41,8 +36,7 @@ class RoomList extends Component {
 		this.setState({newRoomName: ''});
 	}
 
-	deleteRoom(event, roomID) {
-		event.preventDefault();
+	deleteRoom(roomID) {
 		this.roomsRef.child(roomID.key).remove();
 		this.props.setActiveRoom("");
 	}
@@ -50,15 +44,39 @@ class RoomList extends Component {
   render() {
     return (
 			<div>
+				<ul className="retrievingRoomList">
+					{this.state.rooms.map((room, index) => (
+						<li key={index}>
+						 	<span className="eachRoom" onClick={() => this.props.setActiveRoom(room)}>{room.name}</span>
+							<span className="deleteButton"><ion-icon name="trash"></ion-icon></span>
 
-  			<table className="retrievingRoomList">
-					<tbody>{this.state.rooms.map((room, index) =>
-						(<tr className="eachRoom" key={index} onClick={() => this.props.setActiveRoom(room)}>{room.name}</tr>))}
-					</tbody>
-				</table>
+								<div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								  <div className="modal-dialog" role="document">
+								    <div className="modal-content">
+								      <div className="modal-header">
+								        <h5 className="modal-title" id="exampleModalLabel">{room.name}</h5>
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								          <span aria-hidden="true">&times;</span>
+								        </button>
+								      </div>
+								      <div classclassName="modal-body">
+								        testing
+								      </div>
+								      <div className="modal-footer">
+								        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+								        <button type="button" className="btn btn-primary" onClick={this.deleteRoom}>Delete</button>
+								      </div>
+								    </div>
+								  </div>
+								</div>
+						</li>
+					)
+					)}
+				</ul>
 
-				<form className="createNewRoom" onSubmit={this.handleSubmit.bind(this)}>
-					<input type="text" value={this.state.newRoomName} placeholder="New room..." onChange={this.createRoom.bind(this)}/>
+
+				<form className="createNewRoom" onSubmit={this.handleSubmit}>
+					<input type="text" value={this.state.newRoomName} placeholder="New room..." onChange={this.createRoom}/>
 					<button className="submit-button"><ion-icon name="add-circle"></ion-icon>Add</button>
 				</form>
 

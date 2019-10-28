@@ -7,6 +7,10 @@
   font-family: 'Economica', 'Open Sans';
 }
 
+.retrievingRoomList {
+  list-style-type: none;
+}
+
 .eachRoom {
   font-size: 1.45em;
   font-weight: bolder;
