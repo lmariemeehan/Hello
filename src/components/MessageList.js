@@ -11,6 +11,7 @@ class MessageList extends Component {
 
   this.messagesRef = this.props.firebase.database().ref('messages');
   this.createMessage = this.createMessage.bind(this);
+  this.deleteMessage = this.deleteMessage.bind(this);
   this.handleSubmit = this.handleSubmit.bind(this);
   this.formatTime = this.formatTime.bind(this);
 }
@@ -21,10 +22,20 @@ class MessageList extends Component {
       message.key = snapshot.key;
     this.setState({ messages: this.state.messages.concat(message)})
     });
+
+    this.messagesRef.on('child_removed', snapshot => {
+      const deletedMessage = snapshot.val();
+      deletedMessage.key = snapshot.key;
+    this.setState({ messages: this.state.messages.filter( message => message.key !== deletedMessage.key)})
+    })
   }
 
   createMessage(event) {
     this.setState({newMessage: event.target.value});
+  }
+
+  deleteMessage(message) {
+    this.messagesRef.child(message.key).remove();
   }
 
   handleSubmit(event) {
@@ -60,6 +71,7 @@ class MessageList extends Component {
                   <span className="contact-icon"><ion-icon name="contact"></ion-icon></span>
                   <span className="message-username">{message.username} |</span>
                   <span className="message-sentAt">{this.formatTime(message.sentAt)}</span>
+                  <button onClick={ () => this.deleteMessage(message)}>Delete</button>
                 </div>
                   <div className="message-content">{message.content}</div>
               </li>
