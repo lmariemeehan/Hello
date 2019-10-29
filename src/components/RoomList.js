@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import * as firebase from 'firebase';
 import '../styles/roomlist.css';
 
 class RoomList extends Component {
@@ -27,8 +28,8 @@ class RoomList extends Component {
 		this.setState({newRoomName: e.target.value});
 	}
 
-	handleSubmit(event) {
-		event.preventDefault();
+	handleSubmit(e) {
+		e.preventDefault();
 		if(!this.state.newRoomName) { return }
 		this.roomsRef.push({
 			name: this.state.newRoomName,
@@ -36,9 +37,9 @@ class RoomList extends Component {
 		this.setState({newRoomName: ''});
 	}
 
-	deleteRoom(roomID) {
-		this.roomsRef.child(roomID.key).remove();
-		this.props.setActiveRoom("");
+	deleteRoom(index) {
+		let deletedRoom = firebase.database().ref('/rooms/{index}');
+		deletedRoom.remove();
 	}
 
   render() {
@@ -48,27 +49,9 @@ class RoomList extends Component {
 					{this.state.rooms.map((room, index) => (
 						<li key={index}>
 						 	<span className="eachRoom" onClick={() => this.props.setActiveRoom(room)}>{room.name}</span>
-							<span className="deleteButton"><ion-icon name="trash"></ion-icon></span>
-
-								<div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-								  <div className="modal-dialog" role="document">
-								    <div className="modal-content">
-								      <div className="modal-header">
-								        <h5 className="modal-title" id="exampleModalLabel">{room.name}</h5>
-								        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								          <span aria-hidden="true">&times;</span>
-								        </button>
-								      </div>
-								      <div classclassName="modal-body">
-								        testing
-								      </div>
-								      <div className="modal-footer">
-								        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-								        <button type="button" className="btn btn-primary" onClick={this.deleteRoom}>Delete</button>
-								      </div>
-								    </div>
-								  </div>
-								</div>
+							<span className="deleteButton">
+								<ion-icon name="trash" onClick={() => this.deleteRoom(index)}></ion-icon>
+							</span>
 						</li>
 					)
 					)}

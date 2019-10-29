@@ -45,11 +45,11 @@ class App extends Component {
         <div className="room-list">
           <User firebase={firebase}
                 user={this.state.user}
-                setUser={this.setUser}/>
+                setUser={this.setUser} />
 
           <RoomList firebase={firebase}
                     activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}
-                    user={this.state.user}/>
+                    user={this.state.user} />
           <footer>
             <p>Copyright 2018 - 2019 Laura Meehan</p>
             <p>[Formerly known as Bloc Chat]</p>
@@ -62,7 +62,7 @@ class App extends Component {
 
           <MessageList firebase={firebase}
                        activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}
-                       user={this.state.user}/>
+                       user={this.state.user} />
         </main>
 
       </div>
