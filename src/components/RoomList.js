@@ -22,6 +22,12 @@ class RoomList extends Component {
 			room.key = snapshot.key;
 		this.setState({ rooms: this.state.rooms.concat(room) })
 		});
+
+		this.roomsRef.on('child_removed', snapshot => {
+			const deletedRoom = snapshot.val();
+			deletedRoom.key = snapshot.key;
+		this.setState({ rooms: this.state.rooms.filter( room => room.key !== deletedRoom.key)})
+		});
 	}
 
 	createRoom(e){
@@ -37,9 +43,9 @@ class RoomList extends Component {
 		this.setState({newRoomName: ''});
 	}
 
-	deleteRoom(index) {
-		let deletedRoom = firebase.database().ref('/rooms/{index}');
-		deletedRoom.remove();
+	deleteRoom(room) {
+		this.roomsRef.child(room.key).remove();
+		this.props.setActiveRoom('');
 	}
 
   render() {
@@ -50,7 +56,7 @@ class RoomList extends Component {
 						<li key={index}>
 						 	<span className="eachRoom" onClick={() => this.props.setActiveRoom(room)}>{room.name}</span>
 							<span className="deleteButton">
-								<ion-icon name="trash" onClick={() => this.deleteRoom(index)}></ion-icon>
+								<ion-icon name="trash" onClick={() => this.deleteRoom(room)}></ion-icon>
 							</span>
 						</li>
 					)
