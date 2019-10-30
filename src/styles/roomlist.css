@@ -14,12 +14,18 @@
 .eachRoom {
   font-size: 1.45em;
   font-weight: bolder;
+  display: flex;
+  justify-content: space-between;
 /*  text-shadow: 2px 2px 4px #000608; */
 }
 
 .eachRoom:hover {
   color: #4c9fb2; /* dark blue */
-  padding: 10px 40px;
+  /* padding: 10px 40px; */
+}
+
+.eachRoom ion-icon {
+  padding-right: 5px;
 }
 
 .createNewRoom {

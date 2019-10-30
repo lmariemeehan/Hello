@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import * as firebase from 'firebase';
 import '../styles/roomlist.css';
 
 class RoomList extends Component {
@@ -54,13 +53,13 @@ class RoomList extends Component {
 				<ul className="retrievingRoomList">
 					{this.state.rooms.map((room, index) => (
 						<li key={index}>
-						 	<span className="eachRoom" onClick={() => this.props.setActiveRoom(room)}>{room.name}</span>
+						 	<div className="eachRoom" onClick={() => this.props.setActiveRoom(room)}>{room.name}
 							<span className="deleteButton">
-								<ion-icon name="trash" onClick={() => this.deleteRoom(room)}></ion-icon>
+								<ion-icon name="close" onClick={() => this.deleteRoom(room)}></ion-icon>
 							</span>
+							</div>
 						</li>
-					)
-					)}
+					))}
 				</ul>
 
 

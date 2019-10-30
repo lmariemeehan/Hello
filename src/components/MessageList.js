@@ -71,9 +71,11 @@ class MessageList extends Component {
                   <span className="contact-icon"><ion-icon name="contact"></ion-icon></span>
                   <span className="message-username">{message.username} |</span>
                   <span className="message-sentAt">{this.formatTime(message.sentAt)}</span>
-                  <button onClick={ () => this.deleteMessage(message)}>Delete</button>
+
                 </div>
-                  <div className="message-content">{message.content}</div>
+                  <div className="message-content">{message.content}
+                  <span className="delete-message"><ion-icon name="close" onClick={ () => this.deleteMessage(message)}>Delete</ion-icon></span>
+                  </div>
               </li>
             </ul>
           )}

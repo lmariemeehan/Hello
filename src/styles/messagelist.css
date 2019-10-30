@@ -67,6 +67,12 @@ header {
 .message-content {
   padding-bottom: 20px;
   color: #022839;
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-message {
+  padding-right: 30px; 
 }
 
 /*** New message form  ***/
