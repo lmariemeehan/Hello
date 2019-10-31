@@ -35,7 +35,7 @@ header {
 }
 
 .messages h2{
-  color: #033952;
+  color: #033952; /* dark blue for activeRoom name */
   text-align: center;
   margin-top: 1rem;
   font-weight: 600;
@@ -54,7 +54,7 @@ header {
 }
 
 .message-username {
-  color: #033952; /* blue */
+  color: #033952; /* dark blue icon*/
   font-size: 20px;
   text-align: left;
 }
@@ -72,7 +72,7 @@ header {
 }
 
 .delete-message {
-  padding-right: 30px; 
+  padding-right: 30px;
 }
 
 /*** New message form  ***/

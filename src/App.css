@@ -6,18 +6,18 @@
 }
 
 
-/***   Footer   ***/
+/*   Footer idea that I nixed but may change my mind later    
 footer {
-  background-color: #F5F5F5; /* light grey */
+  background-color: #F5F5F5;
   text-align: center;
   align-self: end;
-  color: #055b83; /* blue */
+  color: #055b83;
   padding-top: 15px;
   font-family: 'Economica', serif;
   font-size: 17px;
   font-weight: 600;
   line-height: normal;
-  border-top: 5px solid #FFF; /* white */
+  border-top: 5px solid #FFF;
   margin-top: 1rem;
 }
 
@@ -31,5 +31,6 @@ footer a {
 }
 
 footer a:hover {
-  color: #055b83; /* blue */
+  color: #055b83;
 }
+*/
