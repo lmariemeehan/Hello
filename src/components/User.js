@@ -20,15 +20,25 @@ class User extends Component {
 
   render() {
   return (
-    <section id="buttons">
+    <section id="user-section">
 
     <span className="user-icon"><ion-icon name="contact"></ion-icon></span>
 
-    <p className="user-name">{this.props.user ? this.props.user.displayName : "GUEST" } </p>
+    <div className="user-info">
+      <p className="user-name">{this.props.user ? this.props.user.displayName : "GUEST" } </p>
 
-    <div>{this.props.user ? <button className="sign-in-out" onClick={this.signOut.bind(this)}>Sign Out </button> :
-      <button className="sign-in-out" onClick={this.signIn.bind(this)}>Sign In</button>}
+      <div className="btn-group dropright">
+        <button type="button" className="btn btn-transparent dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+
+        <div className="dropdown-menu">
+          {this.props.user ?
+            <button className="sign-in-out" onClick={this.signOut.bind(this)}>Logout</button> :
+            <button className="sign-in-out" onClick={this.signIn.bind(this)}>Login</button>
+          }
+        </div>
+      </div>
     </div>
+
     </section>
 
   );
