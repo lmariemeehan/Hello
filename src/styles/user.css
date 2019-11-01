@@ -10,32 +10,27 @@
   font-size: 1.75em;
   font-weight: bolder;
   color: #4c9fb2;
-  border-bottom: 3px solid #FFF; /* light blue */
-  /*text-shadow: 2px 2px 4px #808080;*/
   padding-bottom: 7px;
 }
 
-/* Sign in/out buttons */
+/* Login/out button */
 
 .btn-group {
-  margin-top: -15px;
+  margin-top: -20px;
 }
 
-.sign-in-out {
-  /*
-  margin-top: -15px;
-  height: auto;
-  width: auto;
-  padding: 7px 10px;
-  font-size: 20px;
-  border-radius: 4px;
-  */
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none;
 }
 
-.sign-in-out:focus {
-  outline: none;
+.dropdown-item {
+  font-size: 1.25em;
+  color: #055b83;
 }
 
 .user-info {
   display: flex;
+  border-bottom: 3px solid #FFF; /* white */
+
 }
