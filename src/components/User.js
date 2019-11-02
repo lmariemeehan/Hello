@@ -30,7 +30,7 @@ class User extends Component {
       <div className="btn-group dropright">
         <button type="button" className="btn btn-transparent dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
 
-        <div className="dropdown-menu p-3 text-muted">
+        <div className="dropdown-menu p-2 text-muted">
           {this.props.user ?
             <button className="dropdown-item" onClick={this.signOut.bind(this)}>Logout</button> :
             <button className="dropdown-item" onClick={this.signIn.bind(this)}>Login</button>

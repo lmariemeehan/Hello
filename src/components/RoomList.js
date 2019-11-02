@@ -50,23 +50,45 @@ class RoomList extends Component {
   render() {
     return (
 			<div>
-				<ul className="retrievingRoomList">
-					{this.state.rooms.map((room, index) => (
-						<li key={index}>
-						 	<div className="eachRoom" onClick={() => this.props.setActiveRoom(room)}>{room.name}
-							<span className="deleteButton">
-								<ion-icon name="close" onClick={() => this.deleteRoom(room)}></ion-icon>
-							</span>
+
+				<button type="button" id="new-room-button" className="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">New Room</button>
+
+				<div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div className="modal-dialog" role="document">
+				    <div className="modal-content">
+				      <div className="modal-header">
+				        <h5 className="modal-title" id="exampleModalLabel">Create a new room</h5>
+				        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div className="modal-body">
+								<form className="createNewRoom" onSubmit={this.handleSubmit}>
+									<div className="form-group">
+										<label htmlFor="room-name" className="col-form-label">Enter a room name:</label>
+										<input type="text" value={this.state.newRoomName} id="room-name" placeholder="New room..." onChange={this.createRoom}/>
+									</div>
+							<div className="modal-footer">
+								<button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+								<button type="button" className="btn btn-primary">Add<ion-icon name="add-circle"></ion-icon></button>
 							</div>
-						</li>
-					))}
-				</ul>
+								</form>
+				      </div>
+				    </div>
+				  </div>
+				</div>
 
-
-				<form className="createNewRoom" onSubmit={this.handleSubmit}>
-					<input type="text" value={this.state.newRoomName} placeholder="New room..." onChange={this.createRoom}/>
-					<button className="submit-button"><ion-icon name="add-circle"></ion-icon>Add</button>
-				</form>
+					<ul className="retrievingRoomList">
+						{this.state.rooms.map((room, index) => (
+							<li key={index}>
+								<div className="eachRoom" onClick={() => this.props.setActiveRoom(room)}>{room.name}
+								<span className="deleteButton">
+									<ion-icon name="close" onClick={() => this.deleteRoom(room)}></ion-icon>
+								</span>
+								</div>
+							</li>
+						))}
+					</ul>
 
 			</div>
 	  )
