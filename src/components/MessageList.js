@@ -85,9 +85,9 @@ class MessageList extends Component {
           <div className="input-group input-group-lg">
             <input type="text" className="form-control"  value={this.state.newMessage} placeholder="New message..."
             onChange={this.createMessage} />
-
-            <button type="button" id="newmessage-button">Send <i className="far fa-paper-plane"></i></button>
-
+            <div className="input-group-append">
+            <button type="submit" id="newmessage-button">Send <i className="far fa-paper-plane"></i></button>
+            </div>
           </div>
         </form>
 
