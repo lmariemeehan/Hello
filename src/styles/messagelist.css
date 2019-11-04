@@ -28,12 +28,6 @@ header {
   font-size: large;
 }
 
-.messages {
-  display: grid;
-  height: 90vh;
-  grid-template-rows: 70px 1fr 50px;
-}
-
 .messages h2{
   color: #033952; /* dark blue for activeRoom name */
   text-align: center;
@@ -77,14 +71,9 @@ header {
 
 /*** New message form  ***/
 .createNewMessage {
-  /*
-  display: grid;
-  grid-template-columns: 90% 10%;
-  margin-bottom: 0;
-  */
   position: fixed;
   bottom: 0;
-  padding: 30px 30px 30px 0px;
+  /* padding: 30px 30px 30px 0px; */
 }
 
 .createNewMessage input[type="text"] {
@@ -96,9 +85,9 @@ header {
   box-sizing: border-box;
 }
 
-.newmessage-button {
+#newmessage-button {
   background: #F15978;
-  margin: 0 10px 0 -2px;
+  /*margin: 0 10px 0 -2px; */
   box-sizing: border-box;
   border: 2px solid #F15978; /* pink */
   border-top-right-radius: 4px;
