@@ -65,8 +65,7 @@ class RoomList extends Component {
 				      <div className="modal-body">
 								<form className="createNewRoom" onSubmit={this.handleSubmit}>
 									<div className="form-group">
-										<label htmlFor="room-name" className="col-form-label">Enter a room name:</label>
-										<input type="text" value={this.state.newRoomName} id="room-name" placeholder="New room..." onChange={this.createRoom}/>
+										<input type="text" value={this.state.newRoomName} id="room-name" placeholder="Enter new room name..." onChange={this.createRoom}/>
 									</div>
 							<div className="modal-footer">
 								<button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
