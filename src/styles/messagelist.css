@@ -70,27 +70,24 @@ header {
 }
 
 /*** New message form  ***/
-.createNewMessage {
+#createNewMessage {
   position: fixed;
   bottom: 0;
-  padding: 0px 20px 6px; 
+  padding: 0px 20px 6px;
+  width: 80%;
 }
 
-.createNewMessage input[type="text"] {
-  margin-left: 10px;
-  font-size: 1em;
-  border: 2px solid #F15978; /* pink */
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  box-sizing: border-box;
+
+
+#createNewMessage input[type="text"] {
+  font-size: 18px;
+  padding: 10px 20px;
 }
 
-#newmessage-button {
-  background: #F15978;
-  /*margin: 0 10px 0 -2px; */
-  box-sizing: border-box;
-  border: 2px solid #F15978; /* pink */
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  color: white;
+#createNewMessage input[type="text"]:focus, .createNewMessage input[type="text"]:active {
+  outline: none !important;
+}
+
+#new-message-button {
+  font-size: 18px;
 }

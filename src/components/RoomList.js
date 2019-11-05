@@ -51,13 +51,13 @@ class RoomList extends Component {
     return (
 			<div>
 
-				<button type="button" id="new-room-button" className="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">New Room</button>
+				<button type="button" id="new-room-button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">New Room</button>
 
-				<div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="newRoomModal" aria-hidden="true">
 				  <div className="modal-dialog" role="document">
 				    <div className="modal-content">
 				      <div className="modal-header">
-				        <h5 className="modal-title" id="exampleModalLabel">Create a new room</h5>
+				        <h5 className="modal-title">Create a new room</h5>
 				        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
 				          <span aria-hidden="true">&times;</span>
 				        </button>
@@ -70,7 +70,7 @@ class RoomList extends Component {
 									</div>
 							<div className="modal-footer">
 								<button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-								<button type="button" className="btn btn-primary">Add<ion-icon name="add-circle"></ion-icon></button>
+								<button type="submit" className="btn btn-primary">Add<ion-icon name="add-circle"></ion-icon></button>
 							</div>
 								</form>
 				      </div>
