@@ -49,9 +49,9 @@ class RoomList extends Component {
 
   render() {
     return (
-			<div>
+			<div className="container">
 
-				<button type="button" id="new-room-button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">New Room</button>
+				<button type="button" id="new-room-button" className="btn btn-primary btn-lg my-3" data-toggle="modal" data-target="#exampleModal">New Room</button>
 
 				<div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="newRoomModal" aria-hidden="true">
 				  <div className="modal-dialog" role="document">

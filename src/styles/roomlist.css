@@ -9,15 +9,6 @@
   overflow-y: scroll;
 }
 
-#new-room-button {
-  margin: 15px 0px;
-  padding: 8px 16px;
-  font-size: 20px;
-}
-
-#new-room-button:hover {
-  /*background-color: #00264e; */
-}
 .retrievingRoomList {
   padding: 0;
   list-style-type: none;
