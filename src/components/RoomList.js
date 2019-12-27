@@ -51,9 +51,11 @@ class RoomList extends Component {
     return (
 			<div className="container">
 
-				<button type="button" id="new-room-button" className="btn btn-primary btn-lg my-3" data-toggle="modal" data-target="#exampleModal">New Room</button>
+				<div className="primary-buttons">
+				<button type="button" id="new-room-button" className="btn btn-primary my-3" data-toggle="modal" data-target="#newRoomModal">New Room</button>
+				</div>
 
-				<div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="newRoomModal" aria-hidden="true">
+				<div className="modal fade" id="newRoomModal" tabIndex="-1" role="dialog" aria-labelledby="newRoomModal" aria-hidden="true">
 				  <div className="modal-dialog" role="document">
 				    <div className="modal-content">
 				      <div className="modal-header">
@@ -69,7 +71,7 @@ class RoomList extends Component {
 									</div>
 							<div className="modal-footer">
 								<button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-								<button type="submit" className="btn btn-primary">Add<ion-icon name="add-circle"></ion-icon></button>
+								<button type="submit" className="btn btn-primary"><ion-icon name="add-circle"></ion-icon> Add </button>
 							</div>
 								</form>
 				      </div>

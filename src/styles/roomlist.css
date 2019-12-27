@@ -29,8 +29,9 @@
   font-size: 1.5em;
 }
 
-.modal-body {
-  font-size: 1em;
+.primary-buttons .btn {
+  background-color: #F15978;
+  border-color: #F15978;
 }
 
 .createNewRoom ion-icon {
