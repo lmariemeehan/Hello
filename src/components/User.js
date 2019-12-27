@@ -22,19 +22,21 @@ class User extends Component {
   return (
     <section id="user-section">
 
-    <span className="user-icon"><ion-icon name="contact"></ion-icon></span>
+    <div className="container">
+      <span className="user-icon"><ion-icon name="contact"></ion-icon></span>
 
-    <div className="user-info">
-      <p className="user-name">{this.props.user ? this.props.user.displayName : "GUEST" } </p>
+      <div className="user-info">
+        <p className="user-name">{this.props.user ? this.props.user.displayName : "GUEST" } </p>
 
-      <div className="btn-group dropright">
-        <button type="button" className="btn btn-transparent dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+        <div className="btn-group dropright">
+          <button type="button" className="btn btn-transparent dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
 
-        <div className="dropdown-menu p-2 text-muted">
-          {this.props.user ?
-            <button className="dropdown-item" onClick={this.signOut.bind(this)}>Logout</button> :
-            <button className="dropdown-item" onClick={this.signIn.bind(this)}>Login</button>
-          }
+          <div className="dropdown-menu p-2 text-muted">
+            {this.props.user ?
+              <button className="dropdown-item" onClick={this.signOut.bind(this)}>Logout</button> :
+              <button className="dropdown-item" onClick={this.signIn.bind(this)}>Login</button>
+            }
+          </div>
         </div>
       </div>
     </div>

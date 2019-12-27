@@ -49,10 +49,10 @@ class RoomList extends Component {
 
   render() {
     return (
-			<div className="container">
+			<div className="container text-center">
 
 				<div className="primary-buttons">
-				<button type="button" id="new-room-button" className="btn btn-primary my-3" data-toggle="modal" data-target="#newRoomModal">New Room</button>
+				<button type="button" id="new-room-button" className="btn btn-primary my-3" data-toggle="modal" data-target="#newRoomModal"><ion-icon name="add-circle"></ion-icon>New Room</button>
 				</div>
 
 				<div className="modal fade" id="newRoomModal" tabIndex="-1" role="dialog" aria-labelledby="newRoomModal" aria-hidden="true">
@@ -71,7 +71,9 @@ class RoomList extends Component {
 									</div>
 							<div className="modal-footer">
 								<button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+								<div className="primary-buttons">
 								<button type="submit" className="btn btn-primary"><ion-icon name="add-circle"></ion-icon> Add </button>
+								</div>
 							</div>
 								</form>
 				      </div>
