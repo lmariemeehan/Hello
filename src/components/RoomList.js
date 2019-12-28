@@ -50,7 +50,8 @@ class RoomList extends Component {
   render() {
     return (
 			<div className="container-fluid">
-
+			<div className="row">
+			<div className="col">
 				<div className="my-3 text-center">
 				<h3>ROOMS</h3>
 					<ul className="retrievingRoomList">
@@ -96,7 +97,8 @@ class RoomList extends Component {
 				    </div>
 				  </div>
 				</div>
-
+			</div>
+			</div>
 			</div>
 	  )
   }
