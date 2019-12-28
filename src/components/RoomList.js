@@ -49,10 +49,26 @@ class RoomList extends Component {
 
   render() {
     return (
-			<div className="container text-center">
+			<div className="container-fluid">
+
+				<div className="my-3 text-center">
+				<h3>ROOMS</h3>
+					<ul className="retrievingRoomList">
+						{this.state.rooms.map((room, index) => (
+							<li key={index} className="px-3">
+								<div className="eachRoom" onClick={() => this.props.setActiveRoom(room)}>{room.name}
+								<span className="editButton"><ion-icon name="create"></ion-icon></span>
+								<span className="deleteButton">
+									<ion-icon name="close-circle-outline" onClick={() => this.deleteRoom(room)}></ion-icon>
+								</span>
+								</div>
+							</li>
+						))}
+					</ul>
+				</div>
 
 				<div className="primary-buttons">
-				<button type="button" id="new-room-button" className="btn btn-primary my-3" data-toggle="modal" data-target="#newRoomModal"><ion-icon name="add-circle"></ion-icon>New Room</button>
+				<button type="button" id="new-room-button" className="btn btn-primary mb-4" data-toggle="modal" data-target="#newRoomModal"><ion-icon name="add-circle"></ion-icon>New Room</button>
 				</div>
 
 				<div className="modal fade" id="newRoomModal" tabIndex="-1" role="dialog" aria-labelledby="newRoomModal" aria-hidden="true">
@@ -66,8 +82,8 @@ class RoomList extends Component {
 				      </div>
 				      <div className="modal-body">
 								<form className="createNewRoom" onSubmit={this.handleSubmit}>
-									<div className="form-group">
-										<input type="text" value={this.state.newRoomName} id="room-name" placeholder="Enter new room name..." onChange={this.createRoom}/>
+									<div className="form-group text-center">
+										<input type="text" value={this.state.newRoomName} id="room-name" placeholder="New room name..." onChange={this.createRoom}/>
 									</div>
 							<div className="modal-footer">
 								<button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -80,18 +96,6 @@ class RoomList extends Component {
 				    </div>
 				  </div>
 				</div>
-
-					<ul className="retrievingRoomList">
-						{this.state.rooms.map((room, index) => (
-							<li key={index}>
-								<div className="eachRoom" onClick={() => this.props.setActiveRoom(room)}>{room.name}
-								<span className="deleteButton">
-									<ion-icon name="close" onClick={() => this.deleteRoom(room)}></ion-icon>
-								</span>
-								</div>
-							</li>
-						))}
-					</ul>
 
 			</div>
 	  )

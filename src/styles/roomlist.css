@@ -9,20 +9,36 @@
   overflow-y: scroll;
 }
 
+h3 {
+  color: #f7a0b1;
+  font-weight: bolder;
+}
+
 .retrievingRoomList {
-  padding: 0;
   list-style-type: none;
+  padding-inline-start: 0px;
+}
+
+.retrievingRoomList li ion-icon {
+  visibility: hidden;
+}
+
+.retrievingRoomList li:hover ion-icon {
+  visibility: visible;
+}
+
+.retrievingRoomList li:hover {
+  box-shadow: inset 1px 0 0 #dadce0,
+  inset -1px 0 0 #dadce0,
+  0 1px 2px 0 rgba(60,64,67,.3),
+  0 1px 3px 1px rgba(60,64,67,.15);
+  z-index: 1;
 }
 
 .eachRoom {
   font-size: 22px;
-  font-weight: bolder;
   display: flex;
   justify-content: space-between;
-}
-
-.eachRoom:hover {
-  color: #4c9fb2; /* dark blue */
 }
 
 .modal-title {
@@ -38,11 +54,18 @@
   font-size: 18px;
 }
 
+.createNewRoom {
+  font-size: 18px;
+}
+
 .createNewRoom ion-icon {
-  padding-right: 5px;
+  padding-right: 3px;
+  font-size: 20px;
 }
 
 #new-room-button {
+  position: fixed;
+  bottom: 0;
   font-size: 18px;
 }
 
