@@ -51,7 +51,7 @@ class App extends Component {
                       activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}
                       user={this.state.user} />
           </div>
-          <div className="col">
+          <div className="col p-0">
           <main className="main-section">
             <header className="app-name">Hello... <span className="far fa-comment-dots"></span></header>
 

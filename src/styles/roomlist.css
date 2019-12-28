@@ -9,9 +9,11 @@
   overflow-y: scroll;
 }
 
-h3 {
-  color: #f7a0b1;
+p {
+  color: #055b83;
+  font-size: 24px;
   font-weight: bolder;
+  padding-inline-start: 0px;
 }
 
 .retrievingRoomList {
@@ -41,6 +43,10 @@ h3 {
   justify-content: space-between;
 }
 
+.eachRoom ion-icon:nth-child(2) {
+  padding-left: 5px;
+}
+
 .modal-title {
   font-size: 1.5em;
 }
@@ -63,12 +69,12 @@ h3 {
   font-size: 20px;
 }
 
-#new-room-button {
+#new-room-modal-button {
   position: fixed;
   bottom: 0;
   font-size: 18px;
 }
 
-#new-room-button ion-icon {
+#new-room-modal-button ion-icon {
   padding-right: 5px;
 }

@@ -52,15 +52,15 @@ class RoomList extends Component {
 			<div className="container-fluid">
 			<div className="row">
 			<div className="col">
-				<div className="my-3 text-center">
-				<h3>ROOMS</h3>
+				<div className="my-3">
+				<p>ROOMS</p>
 					<ul className="retrievingRoomList">
 						{this.state.rooms.map((room, index) => (
 							<li key={index} className="px-3">
 								<div className="eachRoom" onClick={() => this.props.setActiveRoom(room)}>{room.name}
-								<span className="editButton"><ion-icon name="create"></ion-icon></span>
-								<span className="deleteButton">
-									<ion-icon name="close-circle-outline" onClick={() => this.deleteRoom(room)}></ion-icon>
+								<span>
+								<ion-icon name="create"></ion-icon>
+								<ion-icon name="close-circle-outline" onClick={() => this.deleteRoom(room)}></ion-icon>
 								</span>
 								</div>
 							</li>
@@ -69,7 +69,7 @@ class RoomList extends Component {
 				</div>
 
 				<div className="primary-buttons">
-				<button type="button" id="new-room-button" className="btn btn-primary mb-4" data-toggle="modal" data-target="#newRoomModal"><ion-icon name="add-circle"></ion-icon>New Room</button>
+					<button type="button" id="new-room-modal-button" className="btn btn-primary mb-4" data-toggle="modal" data-target="#newRoomModal"><ion-icon name="add-circle"></ion-icon>New Room</button>
 				</div>
 
 				<div className="modal fade" id="newRoomModal" tabIndex="-1" role="dialog" aria-labelledby="newRoomModal" aria-hidden="true">
