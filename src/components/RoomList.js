@@ -52,24 +52,22 @@ class RoomList extends Component {
 			<div className="container-fluid">
 			<div className="row">
 			<div className="col">
-				<div className="my-3">
-				<p>ROOMS</p>
-					<ul className="retrievingRoomList">
+				<p className="my-2">ROOMS</p>
+					<ul className="flex-column retrievingRoomList">
 						{this.state.rooms.map((room, index) => (
-							<li key={index} className="px-3">
+							<li key={index} className="nav-item">
 								<div className="eachRoom" onClick={() => this.props.setActiveRoom(room)}>{room.name}
 								<span>
-								<ion-icon name="create"></ion-icon>
-								<ion-icon name="close-circle-outline" onClick={() => this.deleteRoom(room)}></ion-icon>
+								<ion-icon name="create" size="large"></ion-icon>
+								<ion-icon name="close-circle-outline" size="large" onClick={() => this.deleteRoom(room)}></ion-icon>
 								</span>
 								</div>
 							</li>
 						))}
 					</ul>
-				</div>
 
 				<div className="primary-buttons">
-					<button type="button" id="new-room-modal-button" className="btn btn-primary mb-4" data-toggle="modal" data-target="#newRoomModal"><ion-icon name="add-circle"></ion-icon>New Room</button>
+					<a role="button" className="btn btn-primary" data-toggle="modal" data-target="#newRoomModal"><ion-icon name="add-circle" size="large"></ion-icon></a>
 				</div>
 
 				<div className="modal fade" id="newRoomModal" tabIndex="-1" role="dialog" aria-labelledby="newRoomModal" aria-hidden="true">
@@ -82,17 +80,17 @@ class RoomList extends Component {
 				        </button>
 				      </div>
 				      <div className="modal-body">
-								<form className="createNewRoom" onSubmit={this.handleSubmit}>
-									<div className="form-group text-center">
-										<input type="text" value={this.state.newRoomName} id="room-name" placeholder="New room name..." onChange={this.createRoom}/>
-									</div>
-							<div className="modal-footer">
-								<button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-								<div className="primary-buttons">
-								<button type="submit" className="btn btn-primary"><ion-icon name="add-circle"></ion-icon> Add </button>
-								</div>
+						<form className="createNewRoom" onSubmit={this.handleSubmit}>
+							<div className="form-group text-center">
+								<input type="text" value={this.state.newRoomName} id="room-name" placeholder="New room name..." onChange={this.createRoom}/>
 							</div>
-								</form>
+						<div className="modal-footer">
+							<button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+							<div className="primary-buttons">
+							<button type="submit" className="btn btn-primary"><ion-icon name="add-circle"></ion-icon> Add </button>
+							</div>
+						</div>
+						</form>
 				      </div>
 				    </div>
 				  </div>

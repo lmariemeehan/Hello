@@ -2,7 +2,6 @@
 #room-list {
   min-height: 100vh;
   height: 100vh;
-  padding: 30px;
   background-color: #F5F5F5; /*light grey*/
   color: #055b83; /* almost black */
   font-family: 'Economica', 'Open Sans';
@@ -56,9 +55,6 @@ p {
   border-color: #F15978;
 }
 
-.primary-buttons ion-icon {
-  font-size: 18px;
-}
 
 .createNewRoom {
   font-size: 18px;
@@ -67,12 +63,6 @@ p {
 .createNewRoom ion-icon {
   padding-right: 3px;
   font-size: 20px;
-}
-
-#new-room-modal-button {
-  position: fixed;
-  bottom: 0;
-  font-size: 18px;
 }
 
 #new-room-modal-button ion-icon {

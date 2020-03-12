@@ -57,7 +57,7 @@ class MessageList extends Component {
 
   render() {
     return (
-      <div className="messages">
+      <div className="container messages">
 
       <h2 className="activeRoom-name">{this.props.activeRoom.name}</h2>
 
@@ -84,12 +84,12 @@ class MessageList extends Component {
 
         <form id="createNewMessage" onSubmit={this.handleSubmit}>
 
-        <div className="primary-buttons">
-            <div className="input-group mb-3">
-              <input type="text" className="form-control" value={this.state.newMessage} placeholder="New message..."
+        <div className="container primary-buttons">
+            <div className="form-row mb-3 fixed-bottom">
+              <input type="text" className="form-control rounded-pill" value={this.state.newMessage} placeholder="New message..."
               onChange={this.createMessage} />
-              <div className="input-group-append">
-                <button className="btn btn-primary" type="submit" id="new-message-button">Send <i className="far fa-paper-plane"></i></button>
+              <div className="col">
+                <button className="btn btn-primary rounded-pill" type="submit" id="new-message-button">Send <i className="far fa-paper-plane"></i></button>
               </div>
             </div>
           </div>
