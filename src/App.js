@@ -42,7 +42,7 @@ class App extends Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <div className="sidenav" id="room-list">
+          <div className="col-sm-3 col-md-2 sidebar" id="room-list">
             <User firebase={firebase}
                   user={this.state.user}
                   setUser={this.setUser} />
@@ -50,14 +50,11 @@ class App extends Component {
                       activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}
                       user={this.state.user} />
           </div>
-          <div className="col p-0">
-            <main className="main-section">
+          <div className="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
               <header className="app-name">Hello... <span className="far fa-comment-dots"></span></header>
-
               <MessageList firebase={firebase}
                            activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}
                            user={this.state.user} />
-            </main>
           </div>
         </div>
       </div>
