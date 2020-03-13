@@ -51,15 +51,15 @@ class RoomList extends Component {
     return (
 			<div className="container">
 			<div className="row">
-			<div className="col">
+			<div className="col text-info">
 				<p className="my-2">ROOMS</p>
 					<ul className="nav nav-flex-column retrievingRoomList">
 						{this.state.rooms.map((room, index) => (
 							<li key={index} className="nav-item">
 								<div className="nav-link eachRoom" onClick={() => this.props.setActiveRoom(room)}>{room.name}
 								<span>
-								<ion-icon name="create" size="large"></ion-icon>
-								<ion-icon name="close-circle-outline" size="large" onClick={() => this.deleteRoom(room)}></ion-icon>
+								<ion-icon name="create" size="small"></ion-icon>
+								<ion-icon name="close-circle-outline" size="small" onClick={() => this.deleteRoom(room)}></ion-icon>
 								</span>
 								</div>
 							</li>

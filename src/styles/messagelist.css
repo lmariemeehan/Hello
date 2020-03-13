@@ -3,10 +3,7 @@ header {
   text-align:left;
   font-size: 3em;
   font-weight: 600;
-  font-style: oblique;
-  font-family: 'Sacramento', Roboto;
-  text-shadow: 1px 1px 2px #000608;
-  color: #F15978; /* pink */
+  font-family: 'Bellota Text', cursive;
   padding-left: 10px;
   border-bottom: 3px solid #F5F5F5; /* light grey */
   background-color: #fff;
@@ -15,6 +12,7 @@ header {
 
 /* header icon */
 .fa-comment-dots {
+  text-shadow: 1px 1px 2px #000608;
   padding-left: 10px;
   position:fixed;
   color: #055b83;
