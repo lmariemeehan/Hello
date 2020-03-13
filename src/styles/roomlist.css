@@ -1,10 +1,7 @@
-/***   Room List Side Menu   ***/
-#room-list {
+.sidebar {
   min-height: 100vh;
   height: 100vh;
-  background-color: #F5F5F5; /*light grey*/
   color: #055b83; /* almost black */
-  font-family: 'Economica', 'Open Sans';
   overflow-y: scroll;
 }
 
@@ -12,7 +9,6 @@ p {
   color: #055b83;
   font-size: 24px;
   font-weight: bolder;
-  padding-inline-start: 0px;
 }
 
 .retrievingRoomList {

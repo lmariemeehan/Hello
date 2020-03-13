@@ -68,9 +68,9 @@ class MessageList extends Component {
             <ul key={index}>
               <li>
                 <div>
-                  <span className="contact-icon"><ion-icon name="contact"></ion-icon></span>
+                  <span className="contact-icon align-middle"><ion-icon name="contact"></ion-icon></span>
                   <span className="message-username">{message.username} |</span>
-                  <span className="message-sentAt">{this.formatTime(message.sentAt)}</span>
+                  <span className="text-muted ml-2">{this.formatTime(message.sentAt)}</span>
 
                 </div>
                   <div className="message-content">{message.content}

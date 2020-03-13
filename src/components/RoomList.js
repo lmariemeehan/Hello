@@ -49,14 +49,14 @@ class RoomList extends Component {
 
   render() {
     return (
-			<div className="container-fluid">
+			<div className="container">
 			<div className="row">
 			<div className="col">
 				<p className="my-2">ROOMS</p>
-					<ul className="flex-column retrievingRoomList">
+					<ul className="nav nav-flex-column retrievingRoomList">
 						{this.state.rooms.map((room, index) => (
 							<li key={index} className="nav-item">
-								<div className="eachRoom" onClick={() => this.props.setActiveRoom(room)}>{room.name}
+								<div className="nav-link eachRoom" onClick={() => this.props.setActiveRoom(room)}>{room.name}
 								<span>
 								<ion-icon name="create" size="large"></ion-icon>
 								<ion-icon name="close-circle-outline" size="large" onClick={() => this.deleteRoom(room)}></ion-icon>
@@ -67,7 +67,7 @@ class RoomList extends Component {
 					</ul>
 
 				<div className="primary-buttons">
-					<a role="button" className="btn btn-primary" data-toggle="modal" data-target="#newRoomModal"><ion-icon name="add-circle" size="large"></ion-icon></a>
+					<button type="button" className="btn btn-primary" data-toggle="modal" data-target="#newRoomModal"><ion-icon name="add-circle" size="large"></ion-icon></button>
 				</div>
 
 				<div className="modal fade" id="newRoomModal" tabIndex="-1" role="dialog" aria-labelledby="newRoomModal" aria-hidden="true">
