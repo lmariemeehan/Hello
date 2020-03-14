@@ -29,7 +29,7 @@ class User extends Component {
                   {this.props.user ? this.props.user.displayName : "GUEST" }
           </button>
 
-          <div className="dropdown-menu p-2 text-muted">
+          <div className="dropdown-menu py-2 text-muted">
             {this.props.user ?
               <button className="dropdown-item" onClick={this.signOut.bind(this)}>Logout</button> :
               <button className="dropdown-item" onClick={this.signIn.bind(this)}>Login</button>
