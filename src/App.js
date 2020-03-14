@@ -3,7 +3,7 @@ import * as firebase from 'firebase';
 import RoomList from './components/RoomList';
 import MessageList from './components/MessageList';
 import User from './components/User';
-import 'bootswatch/dist/journal/bootstrap.min.css';
+import 'bootswatch/dist/lux/bootstrap.min.css';
 
 var config = {
     apiKey: "AIzaSyAICwODjMaxn8gJQAP6iafA6uDGburODX0",
@@ -41,7 +41,7 @@ class App extends Component {
   render() {
     return (
       <div className="wrapper d-flex align-items-stretch">
-        <nav className="col-3 bg-primary text-white min-vh-100 sidebar">
+        <nav className="bg-primary text-white min-vh-100 sidebar" style={{width: "240px"}}>
           <User firebase={firebase}
                 user={this.state.user}
                 setUser={this.setUser} />
@@ -49,11 +49,11 @@ class App extends Component {
                     activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}
                     user={this.state.user} />
         </nav>
-        <div className="col main p-0">
+        <main className="col p-0">
           <MessageList firebase={firebase}
                         activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}
                         user={this.state.user} />
-        </div>
+        </main>
       </div>
     );
   }

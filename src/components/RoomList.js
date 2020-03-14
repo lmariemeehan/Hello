@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/sidebar.scss';
+import { withRouter } from 'react-router-dom';
 
 class RoomList extends Component {
 	constructor(props) {
@@ -50,24 +51,21 @@ class RoomList extends Component {
   render() {
     return (
 			<div className="container">
-			<div className="row">
-			<div className="col">
-				<ul className="list-group mt-3 roomList">
+				<ul className="nav flex-column mt-3 roomList">
 					{this.state.rooms.map((room, index) => (
-						<li key={index} className="list-group-item list-group-item-primary">
+						<li key={index} className="nav-item nav-item">
 							<div className="nav-link eachRoom" onClick={() => this.props.setActiveRoom(room)}>{room.name}
-							<span>
-							<ion-icon name="create" size="small"></ion-icon>
-							<ion-icon name="close-circle-outline" size="small" onClick={() => this.deleteRoom(room)}></ion-icon>
+							<span className="float-right">
+								<span><ion-icon name="create" size="small"></ion-icon></span>
+								<span className="ml-3"><ion-icon name="close-circle-outline" size="small" onClick={() => this.deleteRoom(room)}></ion-icon></span>
 							</span>
 							</div>
 						</li>
 					))}
 				</ul>
 
-			<button type="button" className="btn btn-primary btn-lg btn-block mt-4 mb-0 shadow-lg addRoom" data-toggle="modal" data-target="#newRoomModal">
-				<span className="mr-3 addicon"><ion-icon name="add-circle" size="large"></ion-icon></span>  
-				Room
+			<button type="button" className="btn btn-primary btn-lg btn-block mt-4 shadow-lg addRoom" data-toggle="modal" data-target="#newRoomModal">
+				New Room
 			</button>
 
 				<div className="modal fade" id="newRoomModal" tabIndex="-1" role="dialog" aria-labelledby="newRoomModal" aria-hidden="true">
@@ -85,9 +83,9 @@ class RoomList extends Component {
 								<input type="text" value={this.state.newRoomName} id="room-name" placeholder="New room name..." onChange={this.createRoom}/>
 							</div>
 						<div className="modal-footer">
-							<button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+							<button type="button" className="btn btn-secondary" data-dismiss="modal"> Close</button>
 							<div className="primary-buttons">
-							<button type="submit" className="btn btn-primary"><ion-icon name="add-circle"></ion-icon> Add </button>
+							<button type="submit" className="btn btn-primary"> Add </button>
 							</div>
 						</div>
 						</form>
@@ -95,8 +93,6 @@ class RoomList extends Component {
 				    </div>
 				  </div>
 				</div>
-			</div>
-			</div>
 			</div>
 	  )
   }

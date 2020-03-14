@@ -20,9 +20,8 @@ class User extends Component {
 
   render() {
   return (
-    <div className="container mt-2">
-      <h1 className="align-middle"><span className="user-icon align-middle"><ion-icon name="contact"></ion-icon></span>Hello... </h1>
-
+    <div className="container-fluid mt-4">
+      <h1 className="align-middle text-warning"><span className="user-icon align-middle"><ion-icon name="contact"></ion-icon></span>Hello... </h1>
       <div className="user-info">
         <div className="btn-group dropdown">
           <button type="button" className="btn btn-transparent text-white font-weight-bold dropdown-toggle" 
