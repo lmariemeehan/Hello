@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/roomlist.css';
+import '../styles/sidebar.scss';
 
 class RoomList extends Component {
 	constructor(props) {
@@ -51,24 +51,24 @@ class RoomList extends Component {
     return (
 			<div className="container">
 			<div className="row">
-			<div className="col text-info">
-				<p className="my-2">ROOMS</p>
-					<ul className="nav nav-flex-column retrievingRoomList">
-						{this.state.rooms.map((room, index) => (
-							<li key={index} className="nav-item">
-								<div className="nav-link eachRoom" onClick={() => this.props.setActiveRoom(room)}>{room.name}
-								<span>
-								<ion-icon name="create" size="small"></ion-icon>
-								<ion-icon name="close-circle-outline" size="small" onClick={() => this.deleteRoom(room)}></ion-icon>
-								</span>
-								</div>
-							</li>
-						))}
-					</ul>
+			<div className="col">
+				<ul className="list-group mt-3 roomList">
+					{this.state.rooms.map((room, index) => (
+						<li key={index} className="list-group-item list-group-item-primary">
+							<div className="nav-link eachRoom" onClick={() => this.props.setActiveRoom(room)}>{room.name}
+							<span>
+							<ion-icon name="create" size="small"></ion-icon>
+							<ion-icon name="close-circle-outline" size="small" onClick={() => this.deleteRoom(room)}></ion-icon>
+							</span>
+							</div>
+						</li>
+					))}
+				</ul>
 
-				<div className="primary-buttons">
-					<button type="button" className="btn btn-primary" data-toggle="modal" data-target="#newRoomModal"><ion-icon name="add-circle" size="large"></ion-icon></button>
-				</div>
+			<button type="button" className="btn btn-primary btn-lg btn-block mt-4 mb-0 shadow-lg addRoom" data-toggle="modal" data-target="#newRoomModal">
+				<span className="mr-3 addicon"><ion-icon name="add-circle" size="large"></ion-icon></span>  
+				Room
+			</button>
 
 				<div className="modal fade" id="newRoomModal" tabIndex="-1" role="dialog" aria-labelledby="newRoomModal" aria-hidden="true">
 				  <div className="modal-dialog" role="document">

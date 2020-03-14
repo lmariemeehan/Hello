@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/user.css';
+import '../styles/sidebar.scss';
 
 class User extends Component {
 
@@ -20,16 +20,15 @@ class User extends Component {
 
   render() {
   return (
-    <section id="user-section">
-
-    <div className="container">
-      <span className="user-icon"><ion-icon name="contact"></ion-icon></span>
+    <div className="container mt-2">
+      <h1 className="align-middle"><span className="user-icon align-middle"><ion-icon name="contact"></ion-icon></span>Hello... </h1>
 
       <div className="user-info">
-        <p className="font-weight-bold">{this.props.user ? this.props.user.displayName : "GUEST" } </p>
-
         <div className="btn-group dropdown">
-          <button type="button" className="btn btn-transparent dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+          <button type="button" className="btn btn-transparent text-white font-weight-bold dropdown-toggle" 
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {this.props.user ? this.props.user.displayName : "GUEST" }
+          </button>
 
           <div className="dropdown-menu p-2 text-muted">
             {this.props.user ?
@@ -40,8 +39,6 @@ class User extends Component {
         </div>
       </div>
     </div>
-
-    </section>
 
   );
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/messagelist.css';
+import '../styles/messagelist.scss';
 
 class MessageList extends Component {
   constructor(props){
@@ -57,44 +57,43 @@ class MessageList extends Component {
 
   render() {
     return (
-      <div className="container messages">
+      <div className="container-fluid p-0 messages">
+        <header className="pl-3 py-2 text-primary">
+          <span>{this.props.activeRoom.name}</span>
+          <span className="far fa-comment-dots text-secondary font-weight-bold"></span>
+        </header>
 
-      <h2 className="activeRoom-name">{this.props.activeRoom.name}</h2>
+        <div className= "retrieveMessages">
+          {this.state.messages
+            .filter(message => message.roomID === this.props.activeRoom.key)
+            .map((message, index)=>
+              <ul key={index}>
+                <li>
+                  <div>
+                  <span className="contact-icon align-middle mr-2"><ion-icon name="contact"></ion-icon></span>
+                    <span className="message-username">{message.username} |</span>
+                    <span className="text-muted ml-2">{this.formatTime(message.sentAt)}</span>
 
-      <div className= "retrieveMessages">
-        {this.state.messages
-          .filter(message => message.roomID === this.props.activeRoom.key)
-          .map((message, index)=>
-            <ul key={index}>
-              <li>
-                <div>
-                  <span className="contact-icon align-middle"><ion-icon name="contact"></ion-icon></span>
-                  <span className="message-username">{message.username} |</span>
-                  <span className="text-muted ml-2">{this.formatTime(message.sentAt)}</span>
-
-                </div>
-                  <div className="message-content">{message.content}
-                  <span className="delete-message"><ion-icon name="close" onClick={ () => this.deleteMessage(message)}>Delete</ion-icon></span>
                   </div>
-              </li>
-            </ul>
-          )}
-      </div>
+                    <div className="message-content">{message.content}
+                    <span className="delete-message"><ion-icon name="close" onClick={ () => this.deleteMessage(message)}>Delete</ion-icon></span>
+                    </div>
+                </li>
+              </ul>
+            )}
+        </div>
 
-
-        <form id="createNewMessage" onSubmit={this.handleSubmit}>
-
-        <div className="container primary-buttons">
-            <div className="form-row mb-3 fixed-bottom">
-              <input type="text" className="form-control rounded-pill" value={this.state.newMessage} placeholder="New message..."
+        <form className="container" id="createNewMessage" onSubmit={this.handleSubmit}>
+          <div className="form-row mb-3">
+            <div className="col px-0">
+             <input type="text" className="form-control" value={this.state.newMessage} placeholder="New message..."
               onChange={this.createMessage} />
-              <div className="col">
-                <button className="btn btn-primary rounded-pill" type="submit" id="new-message-button">Send <i className="far fa-paper-plane"></i></button>
-              </div>
+            </div>
+            <div className="col-2 px-0">
+              <button className="btn btn-primary" type="submit" id="new-message-button">Send <i className="far fa-paper-plane"></i></button>
             </div>
           </div>
         </form>
-
 
       </div>
     )
