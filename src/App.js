@@ -26,6 +26,7 @@ class App extends Component {
 
     this.setActiveRoom = this.setActiveRoom.bind(this);
     this.setUser = this.setUser.bind(this);
+
     }
 
     setActiveRoom(room) {
@@ -42,17 +43,25 @@ class App extends Component {
     return (
       <div className="wrapper d-flex align-items-stretch">
         <nav className="bg-primary text-white min-vh-100 sidebar" style={{width: "240px"}}>
-          <User firebase={firebase}
-                user={this.state.user}
-                setUser={this.setUser} />
-            <RoomList firebase={firebase}
-                    activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}
-                    user={this.state.user} />
+          <User 
+            firebase={firebase}
+            user={this.state.user}
+            setUser={this.setUser} 
+          />
+          <RoomList 
+            firebase={firebase}
+            activeRoom={this.state.activeRoom} 
+            setActiveRoom={this.setActiveRoom}
+            user={this.state.user} 
+          />
         </nav>
         <main className="col p-0">
-          <MessageList firebase={firebase}
-                        activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom}
-                        user={this.state.user} />
+          <MessageList 
+            firebase={firebase}
+            activeRoom={this.state.activeRoom} 
+            setActiveRoom={this.setActiveRoom}
+            user={this.state.user} 
+          />
         </main>
       </div>
     );
