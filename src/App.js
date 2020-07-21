@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
-import "firebase/auth";
+import 'firebase/auth';
 import RoomList from './components/RoomList';
 import MessageList from './components/MessageList';
 import User from './components/User';
