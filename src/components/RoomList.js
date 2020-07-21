@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../styles/sidebar.scss';
-import { withRouter } from 'react-router-dom';
 
 class RoomList extends Component {
 	constructor(props) {
