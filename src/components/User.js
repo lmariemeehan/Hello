@@ -21,7 +21,7 @@ class User extends Component {
   render() {
     return (
       <div className="container-fluid mt-4">
-        <h1 className="align-middle text-warning"><span className="user-icon align-middle"><ion-icon name="contact"></ion-icon></span>Hello... </h1>
+        <h1 className="align-middle text-warning"><span className="user-icon align-middle"><ion-icon name="person-circle-outline"></ion-icon></span>Hello... </h1>
         <div className="user-info">
           <div className="btn-group dropdown">
             <button 
