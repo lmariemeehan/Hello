@@ -55,7 +55,7 @@ class RoomList extends Component {
 						<li key={index} className="nav-item nav-item">
 							<div className="nav-link eachRoom" onClick={() => this.props.setActiveRoom(room)}>{room.name}
 							<span className="float-right">
-								<span><ion-icon name="create" size="small"></ion-icon></span>
+								<span><ion-icon name="create-outline" size="small"></ion-icon></span>
 								<span className="ml-3"><ion-icon name="close-circle-outline" size="small" onClick={() => this.deleteRoom(room)}></ion-icon></span>
 							</span>
 							</div>

@@ -88,7 +88,9 @@ class MessageList extends Component {
               onChange={this.createMessage} />
             </div>
             <div className="col-2 px-0">
-              <button className="btn btn-primary" type="submit" id="new-message-button"> <i className="far fa-paper-plane"></i></button>
+              <button className="btn btn-primary" type="submit" id="new-message-button">    
+                <ion-icon name="paper-plane-outline"></ion-icon>
+              </button>
             </div>
           </div>
         </form>
