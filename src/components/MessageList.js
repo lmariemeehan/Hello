@@ -84,8 +84,15 @@ class MessageList extends Component {
         <form className="pl-3" id="createNewMessage" onSubmit={this.handleSubmit}>
           <div className="form-row mb-3">
             <div className="col-10 px-0">
-            <input type="text" className="form-control" value={this.state.newMessage} placeholder="New message..."
-              onChange={this.createMessage} />
+              <label htmlFor="form-control"></label>
+                <input 
+                  id="new-message"
+                  type="text"
+                  name="form-control" 
+                  className="form-control" 
+                  value={this.state.newMessage} 
+                  placeholder="New message..."
+                  onChange={this.createMessage} />
             </div>
             <div className="col-2 px-0">
               <button className="btn btn-primary" type="submit" id="new-message-button">    
