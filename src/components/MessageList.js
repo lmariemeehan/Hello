@@ -60,7 +60,7 @@ class MessageList extends Component {
       <div className="container-fluid d-flex flex-column justify-content-between min-vh-100 messages">
 
         <div>
-          <h1 className="text-primary pl-3 pt-5 pb-5">{this.props.activeRoom.name}</h1>
+          <h1 className="text-primary pl-3 py-5">{this.props.activeRoom.name}</h1>
           <div className="retrieveMessages">
             {this.state.messages
               .filter(message => message.roomID === this.props.activeRoom.key)
@@ -68,12 +68,14 @@ class MessageList extends Component {
                 <ul className="bg-white" key={index}>
                   <li>
                     <div className="font-weight-bolder">
-                      <span className="contact-icon align-middle mr-2"><ion-icon name="contact"></ion-icon></span>
+                      <span className="contact-icon align-middle mr-2"><ion-icon name="person-circle-outline"></ion-icon></span>
                       <span className="message-username">{message.username} |</span>
                       <span className="text-muted ml-2">{this.formatTime(message.sentAt)}</span>
                     </div>
                     <p className="message-content pb-3">{message.content}
-                      <span className="delete-message pr-5"><ion-icon name="close" onClick={ () => this.deleteMessage(message)}>Delete</ion-icon></span>
+                      <span className="delete-message pr-5">
+                        <ion-icon name="close" onClick={ () => this.deleteMessage(message)}>Delete</ion-icon>
+                      </span>
                     </p>
                   </li>
                 </ul>
@@ -84,20 +86,22 @@ class MessageList extends Component {
         <form className="pl-3" id="createNewMessage" onSubmit={this.handleSubmit}>
           <div className="form-row mb-3">
             <div className="col-10 px-0">
-              <label htmlFor="form-control"></label>
+              <label htmlFor="new-message"></label>
                 <input 
-                  id="form-control"
+                  id="new-message"
                   type="text"
-                  name="form-control" 
+                  name="new-message" 
                   className="form-control" 
                   value={this.state.newMessage} 
                   placeholder="New message..."
                   onChange={this.createMessage} />
             </div>
             <div className="col-2 px-0">
-              <button className="btn btn-primary" type="submit" id="new-message-button">    
-                <ion-icon name="paper-plane-outline"></ion-icon>
-              </button>
+              <label>
+                <button className="btn btn-primary" type="submit" id="new-message-button">    
+                  <ion-icon name="paper-plane-outline"></ion-icon>
+                </button>
+              </label>
             </div>
           </div>
         </form>
