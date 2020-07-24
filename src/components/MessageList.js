@@ -86,7 +86,7 @@ class MessageList extends Component {
             <div className="col-10 px-0">
               <label htmlFor="form-control"></label>
                 <input 
-                  id="new-message"
+                  id="form-control"
                   type="text"
                   name="form-control" 
                   className="form-control" 

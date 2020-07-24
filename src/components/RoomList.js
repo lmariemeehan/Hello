@@ -79,7 +79,14 @@ class RoomList extends Component {
 				      <div className="modal-body">
 						<form className="createNewRoom" onSubmit={this.handleSubmit}>
 							<div className="form-group text-center">
-								<input type="text" value={this.state.newRoomName} id="room-name" placeholder="New room name..." onChange={this.createRoom}/>
+								<label>
+									<input 
+										type="text" 
+										value={this.state.newRoomName} 
+										id="room-name" 
+										placeholder="New room name..." 
+										onChange={this.createRoom}/>
+								</label>
 							</div>
 						<div className="modal-footer">
 							<button type="button" className="btn btn-secondary" data-dismiss="modal"> Close</button>
