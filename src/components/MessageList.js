@@ -86,7 +86,7 @@ class MessageList extends Component {
         <form className="pl-3" id="createNewMessage" onSubmit={this.handleSubmit}>
           <div className="form-row mb-3">
             <div className="col-10 px-0">
-              <label htmlFor="new-message"></label>
+              <label className="sr-only" htmlFor="new-message"></label>
                 <input 
                   id="new-message"
                   type="text"
@@ -97,11 +97,13 @@ class MessageList extends Component {
                   onChange={this.createMessage} />
             </div>
             <div className="col-2 px-0">
-              <label>
-                <button className="btn btn-primary" type="submit" id="new-message-button">    
-                  <ion-icon name="paper-plane-outline"></ion-icon>
+              <label className="sr-only" htmlFor="new-message-button"></label>
+                <button 
+                  className="btn btn-primary" 
+                  type="submit" 
+                  id="new-message-button">    
+                    <ion-icon name="paper-plane-outline"></ion-icon>
                 </button>
-              </label>
             </div>
           </div>
         </form>
